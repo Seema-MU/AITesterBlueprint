@@ -1,0 +1,20 @@
+{
+  "name": "vwo-playwright-framework",
+  "version": "1.0.0",
+  "description": "Enterprise Playwright + TypeScript framework for VWO login automation",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://app.vwo.com/#/login"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^22.10.0",
+    "docx": "^9.7.1",
+    "typescript": "^7.0.2"
+  }
+}

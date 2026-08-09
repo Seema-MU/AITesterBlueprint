@@ -1,74 +1,79 @@
-Role -> You are a QA automation tester with 15 years of experience, You have a very good understanding of IT, CRM projects like [salesforce.com](https://salesforce.com/). You need to create a framework with Selenium, Java, Maven, TestNG, and it should be enterprise-level framework that we need to create.
+Role -> You are a QA automation architect with 15 years of experience, with deep expertise in enterprise SaaS and CRM/experimentation platforms like VWO (vwo.com). You need to build an enterprise-level test automation framework using Playwright Test, TypeScript, and Node.js.
 
 
 
-I  -> Instructions
+I -> Instructions
 
-- Generate a Complete Selenium with Java automation script following the standard of enterprise level standards.
-- Automate and verify the results of the login page [login.salesforce.com/?locale=in](https://login.salesforce.com/?locale=in), ensure that UI is thoroughly tested with valid and invalid testcases.
-- [Critical] - Apply the TestNG annotations, @Test, @BeforeTest and others and and necessary setup/teardown logic.
-- [Critical] Implement robust exception handling within both Page Object model and test scripts using structured try–catch blocks or explicit exception signatures. 
-- [Mandatory] Use Page Object Model with PageFactory, including @FindBy, constructor initialization, and reusable action methods. 
-- [Mandatory] - It is important that you use only the xpath not the css selectors. 
-- [Output] - - Output only runnable code, no explanations, comments, dependencies, or extra text. 
-- [Don't] - Don't use the css selectors, ID, name and others things.
-- [Don't] - Don't add comments, Thread.sleep and other bad coding practice.
-- [Generate] - Generate the 2 scripts only with the valid and invalid testcases of the login page.
-- [Don't Use] Thread.sleep() anywhere; rely on WebDriverWait or implicit waits. 
-- Maintain a consistent structure, readability, and modularity across all generated scripts.
-
+- Generate a Complete Playwright with TypeScript automation project following enterprise-level standards.
+- Automate and verify the results of the VWO login page (https://app.vwo.com/#/login), ensure the UI is thoroughly tested with valid and invalid test cases.
+- [Critical] Use the Playwright Test runner's native structure (test.describe, test.beforeEach, test, expect) with proper setup/teardown via fixtures.
+- [Critical] Rely on Playwright's built-in auto-waiting and web-first assertions (expect(...).toBeVisible(), etc.) for failure handling instead of manual try–catch blocks. Configure playwright.config.ts to capture trace, screenshot, and video only on failure (trace: 'on-first-retry', screenshot: 'only-on-failure', video: 'retain-on-failure') so failures are diagnosable without wrapping actions in try–catch.
+- [Mandatory] Use the Page Object Model pattern: one class per page, locators defined as readonly Locator properties initialized in the constructor via this.page, and reusable action methods (e.g., login(), assertLoginError()).
+- [Mandatory] Use only Playwright's recommended, resilient locators — getByRole, getByLabel, getByPlaceholder, or getByTestId. Do not use raw XPath or CSS selectors.
+- [Output] Output only runnable code, no explanations, comments, or extra text.
+- [Don't] Don't use XPath, CSS selectors, or brittle DOM-index-based selectors.
+- [Don't] Don't add comments, hard-coded waits (page.waitForTimeout), or other bad coding practices.
+- [Generate] Generate exactly 2 test cases only: one valid login test, one invalid login test.
+- [Don't Use] page.waitForTimeout() anywhere; rely on Playwright's auto-waiting and web-first assertions (expect(locator).toBeVisible(), etc.).
+- Maintain a consistent structure, readability, and modularity across all generated files.
 
 
 
 C -> Context
-You are creating a login page scripts with proper framework for the sales force login, which is a AB Testing website with valid and invalid login page where in the login page you have the email, password and submit button with remember me functionality. 
+You are creating login page automation for VWO (app.vwo.com), an A/B testing and experimentation platform. The login page includes an email field, a password field, and a submit/login button. Successful login should navigate to the VWO dashboard/account area; invalid credentials should surface an inline validation/error message on the same page.
 
 
 
-**E -> Example**
-Example structure for PageFactory:
+E -> Example
+Example structure for a Playwright Page Object (illustrative locators only — verify actual selectors against the live VWO DOM via Playwright Codegen/Inspector before use):
 
-public class LoginPage {
- @FindBy(xpath = "//input[@id='username']")
- WebElement username;
+import { Page, Locator } from '@playwright/test';
 
+export class LoginPage {
+readonly page: Page;
+readonly emailInput: Locator;
+readonly passwordInput: Locator;
+readonly loginButton: Locator;
+readonly errorMessage: Locator;
 
-
-@FindBy(xpath = "//input[@id='password']")
-WebElement password;
-
-@FindBy(xpath = "//input[@id='Login']")
-WebElement loginButton;
-
-public LoginPage(WebDriver driver) {
-    PageFactory.initElements(driver, this);
+constructor(page: Page) {
+this.page = page;
+this.emailInput = page.getByLabel('Email');
+this.passwordInput = page.getByLabel('Password');
+this.loginButton = page.getByRole('button', { name: 'Login' });
+this.errorMessage = page.getByTestId('login-error');
 }
 
-public void doLogin(String user, String pass) {
-    username.sendKeys(user);
-    password.sendKeys(pass);
-    loginButton.click();
+async goto() {
+await this.page.goto('https://app.vwo.com/#/login');
+}
+
+async login(email: string, password: string) {
+await this.emailInput.fill(email);
+await this.passwordInput.fill(password);
+await this.loginButton.click();
+}
 }
 
 
 
+P -> Parameters
+Production-level automation script, expert-grade, pinpoint accuracy, near-zero bad coding practice.
 
+- External staging/production URL: https://app.vwo.com/#/login
+- Valid and invalid credentials will be supplied externally by the requester before execution.
 
-**P -> PARAMETERS**
-with production level automation script expert with pin point accuracy and almost zero bad coding practice. 
-
--  I have external URLs, external staging URLs. I will give you the external username and password as well 
 
 
 O -> Output
-Provide only: 
+Provide only:
 
-- 1 Page Object file 
-- 2 TestNG test scripts
-- Maven project
+- 1 Page Object file (login.page.ts)
+- 1 Playwright spec file with 2 tests: valid login, invalid login (login.spec.ts)
+- Playwright config (playwright.config.ts) and package.json
 - No explanations or additional content.
 
 
-T -> Tone 
-Technical, precisely, enterprise-grade, code-one.
 
+T -> Tone
+Technical, precise, enterprise-grade, code-only.
