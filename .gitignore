@@ -1,0 +1,36 @@
+# Tool / IDE config
+.agents/
+.claude/
+.commandcode/
+agent/
+.idea/
+.vscode/
+*.iml
+
+# Build artifacts
+target/
+node_modules/
+
+# Runtime artifacts
+screenshots/
+*.log
+*.dump
+*.dumpstream
+
+# Temp / extracted content
+temp_docx/
+prd_temp/
+
+# Office lock files
+~$*
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets (defense in depth)
+.env
+*.env
+.env.*
+!.env.example
