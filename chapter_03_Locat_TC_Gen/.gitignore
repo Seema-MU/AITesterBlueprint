@@ -1,0 +1,12 @@
+# Virtual environment
+.venv/
+
+# Runtime config with credentials
+src/config.json
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Stray empty file
+1.32

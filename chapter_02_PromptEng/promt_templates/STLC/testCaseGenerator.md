@@ -17,7 +17,8 @@ CONSTRAINTS:
 FORMAT:
 | TID | Category | Description | Pre-conditions | Steps | Expected | Priority |
 
-
+Example:
+TID	Category	Description	Pre-conditions	Steps	Expected	Priority
 
 PRD / SRS / REQ / BRD / DRD / JIRA ID / confluece page(content) / HLD :
 <<< [PASTE PRD HERE] >>
