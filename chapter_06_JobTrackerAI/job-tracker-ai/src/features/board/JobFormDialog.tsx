@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { JobCard, JobForm, ResumeVersion, Status } from '../../lib/schema'
 import { COLUMN_LABELS, EMPTY_FORM, JobFormSchema, STATUSES } from '../../lib/schema'
@@ -20,6 +20,22 @@ const inputClass =
   'w-full rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-900 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:ring-zinc-700'
 const labelClass = 'mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400'
 
+/** Seed values: the card being edited, or a fresh create form in the target column. */
+function initialForm(editing: JobCard | undefined, initialStatus: Status): JobForm {
+  if (!editing) return { ...EMPTY_FORM, status: initialStatus }
+  return {
+    company: editing.company,
+    role: editing.role,
+    jobUrl: editing.jobUrl ?? '',
+    jdRawText: editing.jdRawText ?? '',
+    resumeVersionId: editing.resumeVersionId ?? '',
+    dateApplied: editing.dateApplied,
+    salaryRange: editing.salaryRange ?? '',
+    notes: editing.notes ?? '',
+    status: editing.status,
+  }
+}
+
 export default function JobFormDialog({
   slideOver,
   editing,
@@ -28,27 +44,13 @@ export default function JobFormDialog({
   onClose,
   onSubmit,
 }: Props) {
-  const [form, setForm] = useState<JobForm>(EMPTY_FORM)
+  /*
+   * Seeded once from props. App remounts this dialog via `key` whenever the target changes,
+   * so nothing has to sync props into state in an effect — which previously fired a cascading
+   * render on every open.
+   */
+  const [form, setForm] = useState<JobForm>(() => initialForm(editing, initialStatus))
   const [errors, setErrors] = useState<Record<string, string>>({})
-
-  useEffect(() => {
-    if (editing) {
-      setForm({
-        company: editing.company,
-        role: editing.role,
-        jobUrl: editing.jobUrl ?? '',
-        jdRawText: editing.jdRawText ?? '',
-        resumeVersionId: editing.resumeVersionId ?? '',
-        dateApplied: editing.dateApplied,
-        salaryRange: editing.salaryRange ?? '',
-        notes: editing.notes ?? '',
-        status: editing.status,
-      })
-    } else {
-      setForm({ ...EMPTY_FORM, status: initialStatus })
-    }
-    setErrors({})
-  }, [editing, initialStatus])
 
   function set<K extends keyof JobForm>(key: K, value: JobForm[K]) {
     setForm((f) => ({ ...f, [key]: value }))

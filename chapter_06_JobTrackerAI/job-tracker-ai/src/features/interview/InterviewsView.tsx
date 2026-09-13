@@ -91,8 +91,10 @@ export default function InterviewsView() {
     }
   }, [])
 
+  // Captured once per mount; see the note in Card.tsx on why Date.now() stays out of render.
+  const [now] = useState(() => Date.now())
+
   const { upcoming, past } = useMemo(() => {
-    const now = Date.now()
     const at = (row: Row) => new Date(row.round.scheduledAt).getTime()
     const all = rows ?? []
     return {
@@ -101,7 +103,7 @@ export default function InterviewsView() {
         .sort((a, b) => at(a) - at(b)),
       past: all.filter((r) => at(r) < now).sort((a, b) => at(b) - at(a)),
     }
-  }, [rows])
+  }, [rows, now])
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-6">

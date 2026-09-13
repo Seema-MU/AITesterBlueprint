@@ -243,10 +243,10 @@ export function computeMatch(spec: JobSpec, resumeText: string, jdText = ''): Ma
     return [...groups.values()]
   }
 
-  let matchedRequired: MatchedSkill[] = []
-  let missingBlocking: MissingSkill[] = []
-  let matchedPreferred: MatchedSkill[] = []
-  let missingNiceToHave: MissingSkill[] = []
+  const matchedRequired: MatchedSkill[] = []
+  const missingBlocking: MissingSkill[] = []
+  const matchedPreferred: MatchedSkill[] = []
+  const missingNiceToHave: MissingSkill[] = []
   let matchedRequiredGroups = 0
   let matchedPreferredGroups = 0
 

@@ -151,4 +151,23 @@ also repairs a database that missed a store, but re-opening at the *same* versio
 
 ## Deployment
 
-Static Vite app; deploy the `dist/` output (e.g. Vercel with root directory `chapter_06_JobTrackerAI/job-tracker-ai`).
+Static Vite app — no backend and no router, so every screen lives at `/` and no rewrite rules are
+needed. Deploy the `dist/` output.
+
+**Vercel:** set the **Root Directory** to `chapter_06_JobTrackerAI/job-tracker-ai`. This one is not
+optional: the repo root has its own `package.json` (the Jira MCP launcher, which has no build script), so
+a build started from the repo root fails immediately.
+
+Three things to know before putting it online:
+
+- **Do not set `GROQ_API_KEY` in the host's environment variables.** `vite.config.ts` feeds it to `define`,
+  which is a *build-time* string substitution — setting it would bake your key into the public JavaScript
+  bundle for anyone who views source. The app is BYOK: leave it unset and paste your key into **Settings**
+  on the deployed site, where it stays in that browser's IndexedDB. (That variable has no `VITE_` prefix,
+  which is the convention meant to signal "this becomes public" — worth renaming.)
+- **A deployed origin starts with an empty database.** IndexedDB is keyed to origin *and* port, so
+  `localhost:5173` and `your-app.vercel.app` share nothing. Export a backup locally, then import it on the
+  deployed URL. Every Vercel *preview* URL is likewise its own origin with its own empty database.
+- **The Local (LM Studio) provider only works locally.** The `/lmstudio` proxy that tunnels to
+  `127.0.0.1:1234` is defined in Vite's `server` and `preview` config and there is no server on a static
+  host, so that preset will fail once deployed. Groq works fine, because the browser calls it directly.

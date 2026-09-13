@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
-import type { InterviewOutcome, InterviewRound, JobCard } from '../../lib/schema'
+import type { InterviewOutcome, InterviewRound, InterviewRoundForm, JobCard } from '../../lib/schema'
 import {
   EMPTY_ROUND_FORM,
   INTERVIEW_FORMATS,
@@ -41,26 +41,25 @@ interface DialogProps {
   onSubmit: (round: InterviewRound) => void
 }
 
-function RoundDialog({ cardId, initial, nextRound, onCancel, onSubmit }: DialogProps) {
-  const [form, setForm] = useState(EMPTY_ROUND_FORM)
-  const [errors, setErrors] = useState<Record<string, string>>({})
+/** Seed values for the round form: the round being edited, or a blank one. */
+function initialRoundForm(initial: InterviewRound | undefined): InterviewRoundForm {
+  if (!initial) return { ...EMPTY_ROUND_FORM }
+  return {
+    label: initial.label ?? '',
+    scheduledAt: initial.scheduledAt,
+    durationMins: initial.durationMins,
+    interviewer: initial.interviewer ?? '',
+    format: initial.format,
+    outcome: initial.outcome,
+    notes: initial.notes ?? '',
+  }
+}
 
-  useEffect(() => {
-    if (initial) {
-      setForm({
-        label: initial.label ?? '',
-        scheduledAt: initial.scheduledAt,
-        durationMins: initial.durationMins,
-        interviewer: initial.interviewer ?? '',
-        format: initial.format,
-        outcome: initial.outcome,
-        notes: initial.notes ?? '',
-      })
-    } else {
-      setForm({ ...EMPTY_ROUND_FORM })
-    }
-    setErrors({})
-  }, [initial])
+function RoundDialog({ cardId, initial, nextRound, onCancel, onSubmit }: DialogProps) {
+  // Seeded once from props; the parent remounts this dialog via `key` when the target
+  // changes, so there is no prop-syncing effect (and no cascading render on open).
+  const [form, setForm] = useState<InterviewRoundForm>(() => initialRoundForm(initial))
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   function set<K extends keyof typeof form>(key: K, value: (typeof form)[K]) {
     setForm((f) => ({ ...f, [key]: value }))
@@ -440,6 +439,7 @@ export default function RoundsPanel({ card, onClose, onChanged }: Props) {
 
       {adding ? (
         <RoundDialog
+          key="add"
           cardId={card.id}
           nextRound={nextRound}
           onCancel={() => setAdding(false)}
@@ -449,6 +449,7 @@ export default function RoundsPanel({ card, onClose, onChanged }: Props) {
 
       {editing ? (
         <RoundDialog
+          key={editing.id}
           cardId={card.id}
           initial={editing}
           nextRound={nextRound}

@@ -345,3 +345,33 @@ no DB bump and no backup change — which is why the backup format stays at v5.
   should become a real tracked status (a schema change) instead of an inference; whether unanalysed
   resume versions belong in the ranking with a "not measured" label rather than being omitted.
 
+## Lint debt cleared
+
+`npm run lint` is now green. It stood at **12 errors, four of which Phases 4–5 introduced** — the Phase 2
+note above says 8 "in files this phase did not touch", which was accurate when written and then went stale.
+Correcting the record matters more than the count: two of the four categories were render-correctness
+smells in my own Phase 4 code, not style.
+
+- **4 × `prefer-const` in `analysis.ts`** — the grouped-skill arrays are pushed into but never reassigned,
+  so `const` is right. Pre-existing (Phase 1).
+- **3 × unused `_`-prefixed destructures** in `schema.test.ts` — the destructure-to-omit idiom
+  (`const { company: _company, ...rest } = card`). Fixed in `eslint.config.js` with `ignoreRestSiblings`
+  plus `^_` ignore patterns for args, vars and caught errors, rather than contorting the tests. One of the
+  three was mine.
+- **`SettingsView` fast-refresh export** — `PRESETS` was exported but nothing imported it, so it is now a
+  local const instead of a suppressed warning.
+- **2 × `Date.now()` during render** (`Card.tsx` and `InterviewsView.tsx`, both introduced in Phase 4) — a
+  render body has to be deterministic. "Now" is now captured once per mount with
+  `useState(() => Date.now())`. **Trade-off:** a board left open across midnight keeps the previous day's
+  `Interview in Nd` and `Follow up` badges until it remounts. Accepted for a day-granularity badge; the
+  alternative — a ticking `now` in App passed down — would keep them exact at the cost of a timer and prop
+  drilling.
+- **2 × setState-in-effect** (`JobFormDialog`, plus `RoundDialog` which I added in Phase 4) — both seeded
+  form state from props inside an effect, firing a cascading render on every open. They now seed once via
+  `useState(() => initialForm(...))`, and the parent remounts them with a `key` when the target changes.
+  The `key` also fixes a latent bug: switching directly from editing one card to another previously relied
+  on the effect to re-seed.
+
+None of this was ever a gate — `npm run build` does not run eslint — so the phase gates were honest
+throughout. Worth noting that "lint is not a gate" is exactly how 12 errors accumulated across five phases.
+

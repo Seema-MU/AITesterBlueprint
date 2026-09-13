@@ -18,5 +18,21 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      /*
+       * `_`-prefixed names are the conventional way to say "intentionally unused". The tests
+       * rely on it for destructure-to-omit: `const { company: _company, ...rest } = card`
+       * drops a required field without keeping the value around.
+       */
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+    },
   },
 ])

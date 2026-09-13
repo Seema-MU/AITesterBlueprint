@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useDraggable } from '@dnd-kit/core'
 import type { InterviewRound, JobCard } from '../../lib/schema'
 import { STATUS_HEX } from '../../lib/schema'
@@ -53,9 +54,17 @@ export default function Card({
   const days = daysSince(card.dateApplied)
   const resumeLabel = card.resumeVersionId ? resumeLabels[card.resumeVersionId] : undefined
 
+  /*
+   * "Now" is captured once per mount rather than read in the render body: calling Date.now()
+   * during render makes the component non-deterministic, which the purity lint rejects. The
+   * trade is that a board left open across midnight keeps yesterday's badges until it
+   * re-mounts — acceptable for a badge that is only accurate to a day.
+   */
+  const [now] = useState(() => Date.now())
+
   // Next round still ahead of us; a cancelled one should not say "Interview in 3d".
   const nextRound = rounds
-    .filter((r) => r.outcome !== 'cancelled' && new Date(r.scheduledAt).getTime() >= Date.now())
+    .filter((r) => r.outcome !== 'cancelled' && new Date(r.scheduledAt).getTime() >= now)
     .sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))[0]
   const daysToNext = nextRound ? daysUntil(nextRound.scheduledAt) : 0
   const overdue = isFollowUpOverdue(card)

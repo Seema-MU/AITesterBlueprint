@@ -440,6 +440,7 @@ export default function App() {
 
       {sheet ? (
         <JobFormDialog
+          key={sheet.kind === 'edit' ? sheet.card.id : `create-${sheet.status}`}
           slideOver={sheet.kind === 'create'}
           editing={sheet.kind === 'edit' ? sheet.card : undefined}
           initialStatus={sheet.kind === 'create' ? sheet.status : sheet.card.status}

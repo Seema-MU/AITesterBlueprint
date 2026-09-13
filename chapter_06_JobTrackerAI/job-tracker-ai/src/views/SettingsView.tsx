@@ -6,7 +6,9 @@ import { listModels, LlmError } from '../lib/llm'
 
 const ENV_GROQ_KEY: string = (import.meta.env.VITE_GROQ_API_KEY as string | undefined) ?? ''
 
-export const PRESETS = {
+// Local to this view; nothing else imports it, and exporting a non-component from a
+// component file breaks fast refresh.
+const PRESETS = {
   local: {
     label: 'Local (LM Studio)',
     baseUrl: 'http://localhost:1234/v1',
