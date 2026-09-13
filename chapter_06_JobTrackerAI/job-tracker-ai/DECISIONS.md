@@ -296,3 +296,52 @@ ceiling, and the app's handling of that 429 was wrong twice over.
   specifically so this logic is testable without mocking `fetch` or spending wall-clock time on the
   retry delay.
 
+## Phase 5 (trimmed scope)
+
+Scope agreed before building: one read-only **Analytics** tab, entirely derived. No new object store,
+no DB bump and no backup change — which is why the backup format stays at v5.
+
+- **No `recharts`.** v3 §5 nominates it for this phase, but it was never installed and nothing in
+  `src/` imported a charting library. Adding one for two bar charts means re-encountering the
+  `NODE_ENV=production` install problem recorded above. The week chart and the funnel bars are
+  hand-rolled Tailwind divs, reusing the inline bar idiom from `AnalysisPanel.tsx`.
+- **Every function in `src/lib/analytics.ts` is pure** — no IndexedDB, no model, no `fetch` — so the
+  whole dashboard is unit-testable without `fake-indexeddb` or mocking. 28 tests cover it.
+- **Only the newest analysis per card is counted.** A card can hold one analysis per resume version, so
+  aggregating every `matchAnalyses` row would count the same JD's gaps two or three times and inflate
+  the "missing in N JDs" figure. `topMissingSkills` groups by `jobCardId` and keeps the latest
+  `createdAt` — the same row the card face's `matchScore` reflects. This is the easiest way to get this
+  feature silently wrong, so a test pins it.
+- **`everReached` checks `from` as well as `to`.** A transition records the status being *left* in
+  `from`, so a card dragged back to Wishlist logs `{ from: 'applied', to: 'wishlist' }` and its time in
+  Applied is visible only there. Found because a test expected the obvious `status !== 'wishlist'` rule
+  to cover it and it did not.
+- **Applications are dated by `dateApplied`, because history cannot date them.** `makeNewCard` sets
+  `history: []` and `handleCreate` appends nothing, so a card created straight into the Applied column
+  has no "entered applied" event at all. A genuine limitation of the Phase 0 data model. Logging the
+  initial status on create would fix it going forward, but cannot retro-fit existing cards — a
+  candidate for a later phase.
+- **`wishlist` cards are not applications**, in both the weekly chart and the funnel's base.
+- **"Responded" is a proxy, and the UI states the definition.** There is no `responded` status; a card
+  counts once it has ever reached `interview`, `offer` or `rejected` — a rejection *is* a response,
+  whereas `followup` is not, because the user sets that when they chase. The funnel hint names the rule
+  rather than implying a tracked event that does not exist.
+- **Rates are `null`, rendered as `—`, when there are no applications.** "0% response rate" with
+  nothing applied would be a claim the data cannot support.
+- **The responded-vs-not comparison is shown with `n=` and is warned on.** Under 5 samples in either
+  group gets an explicit amber note that the difference is noise; without it the number invites a
+  conclusion it cannot carry. This is the one metric here whose sample size is usually too small.
+- **`missingCoverable` is ignored** — it has been `[]` since Phase 1 (adjacency triage was deferred), so
+  aggregating it would add nothing.
+- **Missing-skill names are canonicalized with the existing `canonicalSkill`** from `config.ts`, so `K8s`
+  and `Kubernetes` collapse into one row, and the row shows the most common original spelling.
+- **Each view duplicates the small bar and `scoreClass` idioms rather than extracting shared
+  components.** The same call as Phase 4: not worth refactoring working, untested panels for a cosmetic
+  gain.
+- **Deferred from v3 §5 (deliberately):** sub-score visuals, the version-diff view, the synonym-map
+  tuning UI, the keyboard dnd sensor, and the Playwright E2E. Sub-scores already render as labelled
+  bars in the analysis panel.
+- **Open questions:** whether the weekly chart should drill into a specific week; whether "responded"
+  should become a real tracked status (a schema change) instead of an inference; whether unanalysed
+  resume versions belong in the ranking with a "not measured" label rather than being omitted.
+

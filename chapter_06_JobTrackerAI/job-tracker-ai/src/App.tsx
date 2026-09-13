@@ -13,6 +13,7 @@ import Header from './components/Header'
 import ProfileView from './views/ProfileView'
 import SettingsView from './views/SettingsView'
 import ResumesView from './views/ResumesView'
+import AnalyticsView from './views/AnalyticsView'
 import AnalysisPanel from './features/analysis/AnalysisPanel'
 import DraftsPanel from './features/artifacts/DraftsPanel'
 import PrepPanel from './features/artifacts/PrepPanel'
@@ -20,11 +21,12 @@ import RoundsPanel from './features/interview/RoundsPanel'
 import InterviewsView from './features/interview/InterviewsView'
 import { purgeStaleFollowUps } from './lib/artifacts'
 
-type View = 'board' | 'interviews' | 'profile' | 'resumes' | 'settings'
+type View = 'board' | 'analytics' | 'interviews' | 'profile' | 'resumes' | 'settings'
 type SheetState = { kind: 'create'; status: Status } | { kind: 'edit'; card: JobCard } | null
 
 const VIEWS: { id: View; label: string }[] = [
   { id: 'board', label: 'Board' },
+  { id: 'analytics', label: 'Analytics' },
   { id: 'interviews', label: 'Interviews' },
   { id: 'profile', label: 'Profile' },
   { id: 'resumes', label: 'Resumes' },
@@ -359,7 +361,11 @@ export default function App() {
       </div>
 
       <div className="min-h-0 flex-1">
-        {view === 'interviews' ? (
+        {view === 'analytics' ? (
+          <div className="h-full overflow-y-auto">
+            <AnalyticsView />
+          </div>
+        ) : view === 'interviews' ? (
           <div className="h-full overflow-y-auto">
             <InterviewsView />
           </div>

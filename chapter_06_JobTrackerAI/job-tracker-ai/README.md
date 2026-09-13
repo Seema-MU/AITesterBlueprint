@@ -2,11 +2,11 @@
 
 Local-first job tracker + AI career copilot (single user, no backend). All data stays in the browser (IndexedDB).
 
-**Phase 4 (current):** interviews and prep on top of the tracker, JD analysis, copilot drafts and the
-resume library. Phase 0 shipped the zero-AI Kanban tracker, Phase 1 the JD analysis + deterministic
-match score, Phase 2 the cover letter / outreach sequence / recruiter DM generators, and Phase 3 the
-resume upload + versioning + structured parsing. The remaining phase (see
-`../job-tracker-ai-build-prompt-v3.md`) is the analytics dashboard — built incrementally.
+**Phase 5 (current):** all five phases of `../job-tracker-ai-build-prompt-v3.md` are built. Phase 0
+shipped the zero-AI Kanban tracker, Phase 1 the JD analysis + deterministic match score, Phase 2 the
+cover letter / outreach sequence / recruiter DM generators, Phase 3 the resume upload + versioning +
+structured parsing, Phase 4 interviews + interview prep, and Phase 5 the derived analytics dashboard.
+A few Phase 5 cosmetics were deliberately skipped — see `DECISIONS.md`.
 
 ## Run it
 
@@ -92,6 +92,21 @@ Your data lives in IndexedDB keyed to the origin **and port**. Use the same port
 - A card that goes quiet gets a derived **Follow up** badge after 7 days without movement — a nudge
   rather than a reminder system, since a browser-only app cannot wake you when it is closed
 
+**Analytics (Phase 5)** — the **Analytics** tab
+
+- **Applications per week** for the last 12 weeks. Wishlist cards are not applications, so they are not
+  counted, and empty weeks stay visible as gaps
+- **Funnel**: applied → responded → interviewed → offer, with conversion rates. "Responded" is defined
+  on screen as having reached interview, offer or rejected — a rejection *is* a reply, whereas following
+  up is something you do, so it does not count
+- **Match score: responded vs not**, always shown with its sample size, and flagged as noise while the
+  groups are small
+- **Skills to learn next** — the requirements missing across every JD you have analysed, split required
+  vs preferred, with synonyms merged (`K8s` and `Kubernetes` are one row). Each job counts once, via its
+  most recent analysis
+- **Resume versions** ranked by best score, and how many JDs each was measured against
+- Entirely derived: no new storage, no DB bump, and nothing leaves the device
+
 ## Backup
 
 Export/import full state as JSON. The current format is **v5** (`{ schemaVersion: 5, exportedAt,
@@ -109,6 +124,7 @@ src/lib/hash.ts            content hash used for change detection and LLM cachin
 src/lib/utils.ts           date/format helpers, incl. the derived follow-up overdue check
 src/lib/prompts/           one module per prompt + PROMPT_VERSION, shared grounding clauses
 src/lib/analysis.ts        JD spec extraction + deterministic match scoring
+src/lib/analytics.ts       derived dashboard stats (pure: no store, no model, no IO)
 src/lib/artifacts.ts       grounded generators for cover letter / outreach sequence / DM / prep
 src/lib/resumeFile.ts      client-side .pdf/.docx text extraction
 src/lib/resumes.ts         resume versions: parse, resolve-for-card, best score
@@ -120,7 +136,7 @@ src/features/board/        Kanban columns, card, add/edit dialog
 src/features/analysis/     match analysis panel
 src/features/artifacts/    copilot drafts panel + interview prep panel
 src/features/interview/    rounds panel (per card) + upcoming/past interviews view
-src/views/                 Profile, Resumes, Settings
+src/views/                 Analytics, Profile, Resumes, Settings
 src/components/            Header, ConfirmDialog
 ```
 
