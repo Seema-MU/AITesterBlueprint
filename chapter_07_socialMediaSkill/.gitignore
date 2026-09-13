@@ -1,0 +1,6 @@
+# Generated post images and the exported content calendar stay out of git history
+# (they are large binaries — ~22 MB of PNGs plus a 4.9 MB .docx).
+# The post text and image prompts in the same folders ARE committed.
+LinkedInPostSkill/output/**/*.png
+shivShambhuContentSkill/output/*.png
+shivShambhuContentSkill/Shiva_Content_Calendar.docx
