@@ -34,3 +34,5 @@ Thumbs.db
 *.env
 .env.*
 !.env.example
+# Holds JIRA_TOKEN for .mcp/jira-launch.js — not covered by the .env patterns above
+.ENVSetUp

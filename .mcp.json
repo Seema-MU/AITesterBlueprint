@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "jira": {
+      "command": "node",
+      "args": [".mcp/jira-launch.js"],
+      "env": {}
+    }
+  }
+}
