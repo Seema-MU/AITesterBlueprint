@@ -15,7 +15,9 @@ export const PRESETS = {
   groq: {
     label: 'Groq (cloud)',
     baseUrl: 'https://api.groq.com/openai/v1',
-    modelHint: 'e.g. llama-3.3-70b-versatile — pick from the loaded list after connecting',
+    // Llama 3.1 8B and 3.3 70B were retired from Groq's free and Developer tiers on
+    // 16 August 2026, so the old hint here sent people to a model that no longer exists.
+    modelHint: 'e.g. openai/gpt-oss-120b — pick from the loaded list after connecting',
   },
 } as const
 type PresetId = keyof typeof PRESETS

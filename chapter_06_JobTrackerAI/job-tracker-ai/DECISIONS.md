@@ -267,3 +267,32 @@ Scope agreed before building: **interview rounds + grounded interview prep, and 
   sending the user back to the card; whether the overdue window should be per-status rather than one
   constant; whether prep topics should be preserved across a regeneration that only changes questions.
 
+## Phase 4 follow-up: the Groq 429 / output-token cap
+
+Found by running prep against a real model — which no test could have caught, because every LLM test
+mocks `completeJson`. A small Groq organisation carries a **1000 output-tokens-per-minute (OTPM)**
+ceiling, and the app's handling of that 429 was wrong twice over.
+
+- **The retry was sized from the ceiling instead of the remainder.** `reducedOutputBudget` read only
+  `Limit 1000` and asked for `1000 × 0.9 = 900`, ignoring the `Used 452` in the very same message. The
+  "smaller" retry therefore exceeded the ~548 actually available, 429'd a second time, and the feature
+  failed. It now computes from `Limit − Used` (493 here), refuses to retry when under
+  `MIN_OUTPUT_BUDGET` (256) tokens remain — a guaranteed second failure — and reads `retry-after` from
+  the response header, falling back to the "try again in 21.1s" in the body, waiting that long with a
+  30s cap so a long cooldown never looks like a hung UI.
+- **Some feature budgets were impossible on that tier before the request was even sent:** prep asked
+  for 1800 output tokens against a 1000 cap, follow-ups 2000, resume parsing 3000. Prep is now
+  `PREP_MAX_TOKENS = 900` with a smaller ask (3–5 topics × 3–4 questions).
+- **Follow-ups and resume parsing were deliberately left alone.** Five emails of 120–180 words genuinely
+  need more than 1000 output tokens, so trimming them to fit would silently degrade the feature. They
+  need Groq's Developer tier or a local model — a real product constraint, not a bug to paper over.
+- **The Settings model hint was a dead end.** It recommended `llama-3.3-70b-versatile`, which Groq
+  retired from its free and Developer tiers on 16 August 2026. Now `openai/gpt-oss-120b` (also ~5×
+  cheaper than the Qwen preview and outside Groq's preview-discontinuation risk).
+- **Limits are per organization, not per key**, so consecutive generations collide by design. The
+  wait-and-retry makes that recoverable rather than fatal.
+- **Testing note:** `src/lib/llm.test.ts` is new and pins the budget arithmetic and delay parsing
+  against the real 429 body. `reducedOutputBudget` and `retryDelayMs` are exported as pure functions
+  specifically so this logic is testable without mocking `fetch` or spending wall-clock time on the
+  retry delay.
+

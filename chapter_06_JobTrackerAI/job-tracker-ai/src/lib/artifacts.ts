@@ -12,6 +12,7 @@ import {
   FOLLOWUP_DAYS,
   FOLLOWUP_PROMPT_VERSION,
   FOLLOWUP_VARIANTS,
+  PREP_MAX_TOKENS,
   PREP_PROMPT_VERSION,
   coverLetterPrompt,
   dmPrompt,
@@ -312,7 +313,7 @@ export async function generatePrep(args: GenerateArgs): Promise<Artifact> {
       'You prepare a candidate for a specific interview using only the supplied resume and job description.',
       prepPrompt(context(input)),
       PrepPlanSchema,
-      { temperature: 0.6, maxTokens: 1800 },
+      { temperature: 0.6, maxTokens: PREP_MAX_TOKENS },
     )
     plan = result.data
     content = renderPrepPlan(plan)

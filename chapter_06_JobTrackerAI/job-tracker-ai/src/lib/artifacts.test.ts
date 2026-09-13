@@ -24,6 +24,7 @@ import {
   DM_MAX_CHARS,
   GROUNDING_CLAUSE,
   FOLLOWUP_PROMPT_VERSION,
+  PREP_MAX_TOKENS,
   PREP_PROMPT_VERSION,
 } from './prompts'
 import { DEFAULT_LLM } from './schema'
@@ -251,7 +252,18 @@ describe('generatePrep', () => {
     await generatePrep(args)
     const userPrompt = completeJsonMock.mock.calls[0][2] as string
     expect(userPrompt).toContain('"topics"')
-    expect(userPrompt).toContain('4-7 topics')
+    expect(userPrompt).toContain('3-5 topics')
+  })
+
+  it('keeps the output budget under a 1000 OTPM ceiling', async () => {
+    completeJsonMock.mockResolvedValue({ data: plan, modelUsed: 'test-model' })
+    await generatePrep(args)
+
+    const options = completeJsonMock.mock.calls[0][4] as { maxTokens?: number }
+    // Small Groq organisations get 1000 output tokens per minute, and an oversized
+    // request is refused outright rather than truncated, so prep must stay under it.
+    expect(options.maxTokens).toBe(PREP_MAX_TOKENS)
+    expect(options.maxTokens).toBeLessThanOrEqual(1000)
   })
 
   it('serves an unchanged input from cache with zero extra model calls', async () => {

@@ -67,9 +67,10 @@ function extractJson(content: string): unknown | null {
 }
 
 /**
- * Providers cap output tokens (Groq on-demand: 1000 OTPM). When a 429 tells us the
- * request is too large, we retry once with a smaller budget instead of failing the
- * feature — some providers simply refuse any request above the cap.
+ * Providers cap output tokens (Groq on-demand orgs get an output-tokens-per-minute
+ * ceiling, e.g. 1000 OTPM). When a 429 tells us the request is too large, we retry
+ * once with a smaller budget instead of failing the feature — some providers simply
+ * refuse any request above the cap.
  */
 const OUTPUT_LIMIT_PATTERN = /reduce max_tokens|request too large|exceed the enforced limit|\bOTPM\b/i
 
@@ -77,13 +78,58 @@ function isOutputLimitError(error: unknown): error is LlmError {
   return error instanceof LlmError && OUTPUT_LIMIT_PATTERN.test(error.message)
 }
 
-/** Reads the provider's stated limit out of its error, else halves the current budget. */
-function reducedOutputBudget(error: LlmError, current: number): number | null {
-  const stated = Number(/\blimit\s+(\d+)/i.exec(error.message)?.[1])
-  const target =
-    Number.isFinite(stated) && stated > 0 ? Math.floor(stated * 0.9) : Math.floor(current / 2)
-  const reduced = Math.max(256, target)
-  return reduced < current ? reduced : null
+/** Below this an answer would be truncated anyway, so a retry is not worth attempting. */
+const MIN_OUTPUT_BUDGET = 256
+/** Never block the UI longer than this, even if the provider asks for more. */
+const MAX_RETRY_WAIT_MS = 30_000
+
+/**
+ * Sizes the retry from the provider's *remaining* budget, not just its ceiling.
+ *
+ * Groq reports the whole picture in the 429 — "Limit 1000, Used 452, Requested 900" —
+ * and an OTPM cap is often smaller than a single large request. Using the limit alone
+ * (1000 × 0.9 = 900) asks for more than is actually left, so the retry 429s again and
+ * the feature fails for no reason. Returning null means "no smaller request would fit",
+ * which is a real condition and should surface the provider's own message.
+ */
+export function reducedOutputBudget(error: LlmError, current: number): number | null {
+  const text = error.message
+  const statedLimit = Number(/\blimit\s+(\d+)/i.exec(text)?.[1])
+  const statedUsed = Number(/\bused\s+(\d+)/i.exec(text)?.[1])
+  const hasCeiling = Number.isFinite(statedLimit) && statedLimit > 0
+
+  const affordable = hasCeiling
+    ? Math.floor(
+        (statedLimit - (Number.isFinite(statedUsed) && statedUsed >= 0 ? statedUsed : 0)) * 0.9,
+      )
+    : // No ceiling to reason about, so halve — a guess, but a decisive one.
+      Math.max(MIN_OUTPUT_BUDGET, Math.floor(current / 2))
+
+  // Below the floor nothing useful would come back, and a retry that is not actually
+  // smaller than the failed request would just hit the same cap again.
+  if (affordable < MIN_OUTPUT_BUDGET) return null
+  return affordable < current ? affordable : null
+}
+
+/**
+ * How long the provider asked us to wait before retrying ("Please try again in 21.1s",
+ * or a `retry-after` header). An OTPM window is a rolling minute, so retrying instantly
+ * is guaranteed to fail again until it resets. Capped so a long cooldown surfaces as an
+ * error the user can act on rather than a UI that merely looks hung.
+ */
+export function retryDelayMs(error: LlmError): number {
+  const match = /(?:try again in|retry[- ]after:?)\s*([\d.]+)\s*(?:s\b|sec|second)?/i.exec(
+    error.message,
+  )
+  const seconds = Number(match?.[1])
+  if (!Number.isFinite(seconds) || seconds <= 0) return 0
+  return Math.min(Math.ceil(seconds * 1000), MAX_RETRY_WAIT_MS)
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
 }
 
 function describeStatus(status: number): string {
@@ -129,8 +175,12 @@ async function chatOnce(
 
   if (!response.ok) {
     const detail = (await response.text().catch(() => '')).slice(0, 300)
+    // A 429 carries `retry-after` in seconds (Groq documents this). It is more reliable
+    // than scraping the human-readable message, which may only say "try again in 21s".
+    const retryAfter = response.headers.get('retry-after')
+    const hint = retryAfter ? ` (retry-after: ${retryAfter})` : ''
     throw new LlmError(
-      `Model server returned ${response.status}${detail ? `: ${detail}` : ''} ${describeStatus(response.status)}`,
+      `Model server returned ${response.status}${detail ? `: ${detail}` : ''}${hint} ${describeStatus(response.status)}`,
     )
   }
 
@@ -215,11 +265,15 @@ export async function completeJson<T>(
   const budget = options.maxTokens ?? 900
   try {
     return await flow(budget)
-  } catch (error) {
-    const reduced = isOutputLimitError(error) ? reducedOutputBudget(error, budget) : null
-    if (reduced === null) throw error
-    // The retry runs with a smaller ceiling; a truncated response still fails
-    // validation and surfaces as an explicit error rather than invented data.
+  } catch (caught) {
+    if (!isOutputLimitError(caught)) throw caught
+    const reduced = reducedOutputBudget(caught, budget)
+    if (reduced === null) throw caught
+    // Wait out the window the provider named, otherwise the retry just hits the same
+    // per-minute cap. The retry then runs with a smaller ceiling; a truncated response
+    // still fails validation and surfaces as an explicit error rather than invented data.
+    const waitMs = retryDelayMs(caught)
+    if (waitMs > 0) await sleep(waitMs)
     return flow(reduced)
   }
 }

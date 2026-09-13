@@ -3,13 +3,21 @@ import { contextBlock, type GenerationContext } from './context'
 
 export const PREP_PROMPT_VERSION = 'prep-v1'
 
+/**
+ * Output budget, kept modest on purpose. Small Groq organisations carry an
+ * output-tokens-per-minute cap (1000 in the reported case) and an oversized request is
+ * refused outright rather than truncated, so the topic and question counts below are
+ * sized to fit that ceiling rather than to be as thorough as possible.
+ */
+export const PREP_MAX_TOKENS = 900
+
 export function prepPrompt(ctx: GenerationContext): string {
   return [
     'You prepare a candidate for an interview for one specific role at one specific company.',
     'Return JSON with exactly this shape:',
     '{ "topics": [{ "topic": "topic name", "questions": ["question", "question"] }] }',
     '',
-    'Produce 4-7 topics, each with 3-6 questions. Group questions by theme, not by difficulty.',
+    'Produce 3-5 topics, each with 3-4 questions. Group questions by theme, not by difficulty.',
     '',
     'Choose topics from the job description\'s actual requirement areas — for example its named',
     'technologies, its testing or delivery practices, and its domain — plus one topic of behavioural',

@@ -12,4 +12,4 @@ export {
   type FollowUpDay,
 } from './followUp'
 export { dmPrompt, DM_PROMPT_VERSION, DM_MAX_CHARS } from './dm'
-export { prepPrompt, PREP_PROMPT_VERSION } from './prep'
+export { prepPrompt, PREP_PROMPT_VERSION, PREP_MAX_TOKENS } from './prep'
