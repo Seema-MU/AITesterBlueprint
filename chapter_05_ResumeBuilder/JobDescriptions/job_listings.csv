@@ -1,0 +1,120 @@
+"Job Title","Company","Location","Experience Required","Posted","Job URL","Job Description"
+"AI Engineer","Lowe's","Bengaluru","2 to 3 years","3 weeks ago","https://www.naukri.com/job-listings-ai-engineer-lowes-services-india-private-limited-bengaluru-2-to-3-years-120826503990","Innovate in Bengaluru
+
+This position is based at our on-site office in Bengaluru. Lowes offers an ultramodern work environment, complete with cutting-edge technology, collaborative workspaces, an on-site gym and clinic, and other perks to enhance your work experience.
+
+About Lowe s
+
+Lowe s is a FORTUNE 100 home improvement company serving approximately 16 million customer transactions a week in the United States. With total fiscal year 2024 sales of more than $83 billion, Lowe s operates over 1,700 home improvement stores and employs approximately 300,000 associates. Based in Mooresville, N.C., Lowe s supports the communities it serves through programs focused on creating safe, affordable housing, improving community spaces, helping to develop the next generation of skilled trade experts and providing disaster relief to communities in need. For more information, visit Lowes.com.
+
+Lowe s India, the Global Capability Center of Lowe s Companies Inc., is a hub for driving our technology, business, analytics, and shared services strategy. Based in Bengaluru with over 4,500 associates, it powers innovations across omnichannel retail, AI/ML, enterprise architecture, supply chain, and customer experience. From supporting and launching homegrown solutions to fostering innovation through its Catalyze platform, Lowe s India plays a pivotal role in transforming home improvement retail while upholding strong commitment to social impact and sustainability. For more information, visit Lowes India
+
+Job Summary
+
+As a Software Engineer / AI Engineer, you will design, develop, and deliver scalable software applications and AI-enabled solutions that solve real-world business problems. You will work across backend services, APIs, data platforms, cloud-native systems, and modern AI technologies to build reliable, secure, and production-ready applications.
+
+You will collaborate with Product Management, Architecture, Security, Infrastructure, and other Engineering teams to deliver secure, high-quality, production-grade applications.
+
+The ideal candidate has strong software engineering fundamentals along with practical experience developing AI-native and LLM-powered applications. This includes working with Large Language Models (LLMs), AI agents, Retrieval-Augmented Generation (RAG), orchestration frameworks, tool-calling architectures, Model Context Protocol (MCP), vector databases, prompt engineering, evaluation frameworks, and enterprise AI integration patterns.
+
+Roles Responsibilities
+
+Design, develop, test, and maintain scalable software applications and AI-enabled solutions.
+
+Develop backend applications, RESTful APIs, microservices, and distributed services using Java, Spring Boot, and modern software engineering frameworks.
+
+Build and maintain frontend applications using React.js and modern web development technologies when required.
+
+Design and implement production-ready LLM-powered applications and AI-native capabilities that address real business use cases.
+
+Build AI agents and agentic workflows capable of interacting with enterprise APIs, databases, documents, operational systems, and external tools.
+
+Develop agentic solutions using frameworks and platforms such as Google Agent Development Kit (ADK), Semantic Kernel, and Implement Model Context Protocol (MCP) integrations, including MCP servers, clients, tools, and reusable enterprise capabilities for AI applications.
+
+Design and implement Retrieval-Augmented Generation (RAG) pipelines using embeddings, vector databases, semantic search, metadata filtering, document retrieval, reranking, and grounded response generation.
+
+Integrate LLMs and AI models from platforms such as Google Gemini, OpenAI, Anthropic Claude, or similar enterprise AI platforms.
+
+Develop secure tool-calling and function-calling workflows that allow AI agents to interact with internal services and enterprise systems.
+
+Apply prompt engineering and context engineering techniques to improve the accuracy, relevance, and reliability of LLM-based applications.
+
+Implement AI guardrails, validation mechanisms, structured outputs, grounding techniques, and safety controls to reduce hallucinations and improve application reliability.
+
+Develop evaluation frameworks for AI applications, including response-quality evaluation, regression testing, hallucination detection, groundedness checks, latency measurement, and cost monitoring.
+
+Implement AI observability and monitoring capabilities to track model behavior, application performance, token consumption, failures, and production quality.
+
+Design and implement database solutions using technologies such as PostgreSQL, MongoDB, Apache Druid, and Google BigQuery.
+
+Integrate applications with messaging and event-streaming technologies such as Apache Kafka.
+
+Develop cloud-native applications and services designed for scalability, resilience, observability, and high availability.
+
+Create automated unit, integration, regression, API, and end-to-end tests for software and AI-enabled features.
+
+Participate in code reviews and follow secure coding standards, engineering best practices, and established software development guidelines.
+
+Troubleshoot application and AI-system issues, perform root-cause analysis, and implement sustainable solutions.
+
+Participate in technical design discussions, architecture reviews, and system-design sessions.
+
+Collaborate with Product, Architecture, Data Engineering, Security, Infrastructure, and Engineering teams throughout the software development lifecycle.
+
+Use AI-assisted software development tools such as GitHub Copilot, Cursor, Windsurf, ChatGPT Enterprise, Gemini, Claude, or similar tools to improve development productivity, testing, technical documentation, and continuous improvement initiatives.
+
+Required Experience
+
+3+ years of professional software engineering experience developing production applications.
+
+Experience working across the Software Development Life Cycle (SDLC), including design, development, testing, deployment, and production support.
+
+Strong programming experience with Java and Spring Boot or comparable backend technologies.
+
+Experience developing REST APIs, microservices, and distributed applications.
+
+Experience with modern frontend technologies such as React.js, JavaScript, or TypeScript is preferred.
+
+Experience working with relational and/or NoSQL databases such as PostgreSQL, MongoDB, BigQuery, or similar technologies.
+
+Experience with cloud-native application development and modern deployment practices.
+
+Hands-on experience developing AI/ML or Generative AI applications.
+
+Practical experience integrating Large Language Models (LLMs) into software applications.
+
+Experience building AI agents, agentic workflows, Retrieval-Augmented Generation (RAG), and AI orchestration frameworks such as LangChain, LangGraph, Google ADK, CrewAI, Semantic Kernel, or equivalent frameworks.
+
+Understanding of embeddings, vector databases, semantic retrieval, prompt engineering, context management, and grounded generation.
+
+Familiarity with AI application evaluation, observability, guardrails, hallucination mitigation, latency optimization, and token/cost management.
+
+Experience with automated testing and software engineering best practices.
+
+Experience working in Agile/Scrum or Kanban development environments.
+
+Preferred Qualifications
+
+Experience building and deploying production-grade Generative AI applications.
+
+Experience integrating AI systems with enterprise APIs, databases, document repositories, and operational platforms.
+
+Experience designing multi-agent or agentic workflow systems.
+
+Experience implementing MCP servers, clients, and tools for enterprise AI applications.
+
+Experience with vector databases and semantic-search technologies.
+
+Experience with Apache Kafka or other event-driven architectures.
+
+Experience with Google Cloud Platform (GCP) technologies such as BigQuery and related AI/cloud services.
+
+Understanding of enterprise security, authentication, authorization, data privacy, and responsible AI practices.
+
+Ability to translate business requirements into scalable software and AI solutions.
+
+Strong problem-solving, debugging, communication, and cross-functional collaboration skills.
+
+Lowes is an equal opportunity employer and administers all personnel practices without regard to race, color, religious creed, sex, gender, age, ancestry, national origin, mental or physical disability or medical condition, sexual orientation, gender identity or expression, marital status, military or veteran status, genetic information, or any other category protected under federal, state, or local law.
+
+Disclaimer: This job description has been sourced from a public domain and may have been modified by Naukri.com to improve clarity for our users. We encourage job seekers to verify all details directly with the employer via their official channels before applying."

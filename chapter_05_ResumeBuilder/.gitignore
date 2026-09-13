@@ -1,0 +1,11 @@
+# Personal resume material — kept on disk, deliberately out of git history.
+# These hold contact details and employment history, and resume/ also contains a
+# third-party resume that was used as a formatting reference.
+#
+# output/ is the generated tree (tailored resumes, match reports, specs). Every
+# file in it carries the same personal details, so the whole tree is excluded
+# rather than picking off individual files.
+SeemaResume/
+finalResumeCore/
+resume/
+output/

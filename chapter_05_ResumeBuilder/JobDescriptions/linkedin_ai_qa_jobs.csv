@@ -1,0 +1,377 @@
+﻿"Company Name","Job Title","Job Description"
+"DevRev","Quality Engineer – Automation & AI","About DevRev
+
+At DevRev, we're building the future of work with Computer – your AI teammate. Unlike traditional tools, Computer unifies all your data sources, tools, and workflows into a single AI-ready platform, giving employees real-time insights, proactive suggestions, and powerful agentic actions. It extends your existing software with AI-native apps and agents that work alongside your teams and customers – updating workflows, coordinating across teams, and eliminating repetitive work. We call this Team Intelligence: human-AI collaboration that breaks down silos, brings people back together, and frees you to solve bigger problems. Backed by Khosla Ventures and Mayfield with $150M+ raised, DevRev is trusted by global companies across industries.
+
+About The Role
+We are looking for a Quality Architect/Lead with hands-on experience building quality systems and has deep expertise in building and scaling test automation frameworks. The role requires an individual who applies systems thinking to solving complex problems. They should be able to understand the product from various perspectives and be able to effectively create testing programs that validate not just functionality but performance, reliability and user experience. DevRev is building a next generation AI native product that requires us to build novel test systems for the Agent AI platform. The role is multi-faceted and is going to continuously evolve with time.
+
+What You'll Do
+Test Case Design and Documentation: Actively use AI and intelligent agents to accelerate test generation, test maintenance, and coverage expansion. Leverage LLMs to convert requirements, user stories, and production incidents into high-quality automated test cases. Reduce reliance on manual test case creation by introducing AI-assisted automation workflows, with human review and ownership. Apply AI to optimize test selection, prioritization, and execution based on risk, code changes, and historical failures. Use AI to assist in identifying missing scenarios, edge cases, and negative paths from requirements and user behavior. Maintain strong traceability between product features, test cases, and automated coverage, with AI support for documentation updates and gap analysis.
+
+Test Suite Development: Create frameworks and standards that help AI create deterministic and stable tests. Establish coding standards, branching strategies, and review guidelines for automation code. Integrate test execution into CI/CD pipelines with fast feedback loops and real-time reporting. Design and build tools that help with test generation, flakiness detection, self-healing tests, and intelligent exploratory testing. Champion shift-left testing by working closely with engineering, product, and DevOps teams to prevent defects early.
+
+Quality Ownership and Continuous Improvement: Own the health and evolution of the automation framework. Build AI systems that triage test failures, flaky behavior, and production escapes. Continuously improve testing strategies based on learnings from releases, incidents, and customer impact. Promote a strong quality mindset where AI is used as a force multiplier, not a shortcut. Engage with customers and customer facing teams to understand their perspective and bring it back to Engineering for improving the product.
+
+What You'll Bring: 7+ years of experience building customer-facing products. Skill in writing high-quality, maintainable code in any one programming language. Demonstrated experience building an automation framework from scratch, with organized test categorization, reusability, and CI/CD integration. Strong understanding of software testing methodologies, test planning, and test strategy. Familiarity with using AI to enhance testing and software development. Strong problem-solving skills and attention to detail. Experience with Git, GitHub, CircleCI and cloud services like AWS/GCP. Excellent communication, teamwork, and documentation skills, with a strong ability to advocate for best practices. Experience with testing modern web applications and Desktop applications based on Electron.
+
+Preferred Skills: Experience with defining a QA strategy and execution for a product that is now live. Knowledge of test framework design and development. Strong understanding of test reporting tools and technologies. Experience with UI and API testing like Ginkgo and Playwright. Experience with Performance and Stress testing.
+
+Nice to Have: People management skills (Direct or Indirect). Experience building systems to validate AI systems including Agents.
+
+DevRev is an equal opportunity employer and does not discriminate on the basis of race, gender, sexual orientation, gender identity/expression, national origin, disability, age, genetic information, veteran status, marital status, pregnancy or related condition, or any other basis protected by law."
+"Celonis","AI Engineer - Quality","Celonis is the trusted platform to industrialize Enterprise AI. At our core is the Celonis Context Model — which combines process data, business knowledge, and intelligence into a living digital twin of the enterprise that AI can actually understand, turning AI's operational blind spots into operational clarity.
+
+The Team: You will join the Sailfin Accounts Receivable (AR) Team, a product engineering team within the Finance & Accounting domain. We build and maintain an enterprise-grade AR product used by global customers. The team works with modern engineering practices, AI/ML capabilities, automation, and deep integrations across platforms such as Salesforce, Celonis, and other enterprise systems. This role sits at the intersection of Quality Engineering + AI-driven automation + enterprise data integration.
+
+The Role: We are looking for an AI Engineer – Quality who can build next-generation intelligent automation and quality frameworks. This role goes beyond traditional QA—it combines strong automation engineering, enterprise integration understanding, and AI-assisted quality improvement. You will architect automation frameworks, drive end-to-end quality strategy, and build smart testing capabilities powered by LLMs and AI agents. Most importantly, you will test the bridge between Salesforce and Celonis—a complex, data-heavy integration that powers enterprise decision-making.
+
+The work you'll do:
+Architect the Automation Foundation - Design, build, and maintain a scalable, modular automation framework from scratch using Playwright (JavaScript/TypeScript). Establish reusable utilities, reporting systems, abstraction layers, and extensible test modules.
+Drive Full QA Strategy across Frontend/UI, Backend/API, Data validation. Implement robust test coverage across the end-to-end workflow.
+Integration Quality Specialist - Validate data integrity between Salesforce and Celonis. Identify edge cases involving complex business logic, process mining models, multi-step data transformations. Ensure consistency across pipelines, APIs, and event flows.
+Performance & Load Testing - Lead performance engineering efforts using tools like k6 or JMeter. Ensure the integration performs reliably under large enterprise-scale data volumes.
+AI-Driven Quality Engineering - Leverage LLMs and AI tools to auto-generate test cases, summarize failures, enable root-cause analysis, build intelligent test assistants. Support the shift from manual testing to AI-first Quality Engineering.
+
+Qualifications: 6 years of experience in technical QA roles on high-scale web applications. Strong hands-on experience with Playwright (async patterns, state management, debugging, custom fixtures). Solid understanding of QA methodologies, regression strategies, risk-based testing, CI/CD pipelines (GitHub Actions preferred). Strong knowledge of API testing, data validation, and automation best practices.
+
+AI / LLM Skills: Experience using LLM-powered QA tools (Copilot, Codeium, test generators). Ability to use LLMs or Python scripts to automate repetitive quality tasks.
+
+Plus Factors: Experience working with Salesforce, Apex, or Salesforce data models. Understanding of Celonis or other process mining / data transformation platforms. Experience with performance testing tools like k6, JMeter, or Locust. Exposure to enterprise data pipelines or ETL validation.
+
+Celonis is headquartered in Munich, Germany, and New York City, USA, with more than 20 offices worldwide."
+"Apple","Quality Assurance Automation Engineer - Manufacturing Systems and Infrastructure","Summary: Apple is where individual imaginations gather together, committing to the values that lead to great work. Manufacturing Systems and Infrastructure (MSI) team is an engineering organisation under the Product Operations org. MSI is responsible for the design, development and maintenance of system tools, services and applications required to efficiently run manufacturing operations at scale across global factory sites.
+
+Description: As a Quality Assurance Automation Engineer with the MSI team, you will leverage Large Language Models and AI-native testing tools to rapidly build, scale, and maintain automated test suites across web, mobile, and API interfaces. You will design intelligent automation frameworks, generate synthetic datasets for edge-case and load testing, and embed smart execution strategies into CI/CD pipelines - all while championing GenAI adoption and best practices across the QA organisation.
+
+Responsibilities:
+Leverage LLMs and AI coding assistants (e.g., GitHub Copilot, Cursor, ChatGPT) to rapidly generate, refactor, and document automated test scripts for web, mobile, and API interfaces.
+Design, build, and maintain scalable test automation frameworks, integrating AI-native testing tools (e.g., Applitools for visual AI, Testim/Mabl for self-healing locators).
+Utilise Generative AI to design and generate massive, diverse, and secure synthetic datasets for complex edge-case testing and load testing.
+Integrate automated suites into CI/CD pipelines (GitHub Actions, Jenkins) and implement ""smart execution"" strategies (using ML/AI to determine exactly which tests need to run based on the code commit).
+Utilise AI tools to rapidly parse server logs, stack traces, and crash reports to identify root causes of test failures, categorising bugs automatically.
+Partner with product and engineering teams to define test strategies, ensuring maximum test coverage while reducing maintenance overhead through intelligent automation.
+Champion the use of AI within the QA team, creating prompt libraries, guidelines, and best practices for using GenAI to write test cases and acceptance criteria.
+
+Minimum Qualifications: 5+ years of experience in QA Automation, System Development in Test (SDET), or a similar engineering role. Expertise in Python, C/C++, Objective-C, and Swift, leveraging modern AI-assisted (vibe coding) development workflows. Deep experience applying AI-powered techniques to generate, optimise, and maintain automated test suites with modern testing frameworks such as Playwright, Cypress, Selenium, Appium, or XCTest. Demonstrated ability to write effective prompts to extract test scenarios, edge cases, and automation code from Large Language Models. Familiarity with AI-powered testing tools (e.g., Applitools Eyes, ReportPortal's ML auto-analyzer, or self-healing UI tools). Solid understanding of CI/CD pipelines, Docker, and version control (Git). Ability and willingness to travel up to 30% (domestic and international). Bachelors / Masters in Computer Science or related fields.
+
+Preferred Qualifications: Experience designing and generating synthetic datasets for large-scale load and edge-case testing. Hands-on experience implementing ML/AI-driven smart test-selection or ""smart execution"" strategies in CI/CD. Experience building and curating prompt libraries or GenAI usage guidelines for a QA or engineering organisation. Excellent written and verbal communication skills. Self-motivated with a strong ownership mindset. Strong problem-solving skills with a focus on reducing ""flaky tests"" through resilient coding and AI insights.
+
+Role Number: 200673291-0321"
+"Zensar Technologies","Assure AI Engineer","Job Description: Gemini – AssureAI Engineer (2 positions)
+Keywords: AssureAI, Evaluation Datasets, Red-Teaming, Bias & Explainability (SHAP/LIME), Threshold Gates, CI/CD, Audit Evidence, Python
+
+About The Role: You are one of two hands-on operators of AssureAI's Trustworthiness pillar inside the Governance Control Tower. Where the AI Trust & Compliance Engineer sets the strategy — which regulations map to which checks, what a passing threshold means — you build and run the evaluation suites that prove it, day in and day out, across a growing roster of Gemini-based agents. You report to the AI Trust & Compliance Engineer and work closely with the AI Engineers building the agents you test.
+
+What You'll Own:
+Build and maintain evaluation datasets and scenarios for each of AssureAI's 19 Trustworthiness checks (explainability, audit provenance, regulation coverage, safety guardrails) as new agents come online.
+Run scheduled and on-commit bias, toxicity, red-team, and explainability (SHAP/LIME) suites; triage failures and route them to the right owner (AI Engineer, Integration Specialist, or Governance Engineer).
+Maintain the CI/CD threshold-gate configuration so a failing Trustworthiness check blocks release rather than just flagging it.
+Package audit evidence — run provenance, evidence exportability, regulation-coverage reports — for the AI Trust & Compliance Engineer's CSG review-board submissions.
+Track dataset coverage and flag gaps as agent scope expands into new domains, data types, or regulatory contexts.
+Split coverage with the second AssureAI Engineer across agent domains or pipeline stages so evaluation throughput scales with agent count.
+
+What We're Looking For: 5-7 years in QA/test engineering for ML or GenAI systems, ideally with a dedicated eval framework (DeepEval, Ragas, Promptfoo, or comparable). Hands-on experience with AssureAI or a directly comparable AI-assurance/evaluation platform. Working knowledge of bias/fairness testing, explainability techniques (SHAP/LIME), and red-teaming/adversarial-prompt methodology. Comfortable reading AI regulatory requirements (EU AI Act, NIST AI RMF, ISO/IEC 42001) well enough to translate them into test coverage. Proficient in Python; comfortable wiring test suites into CI/CD (Cloud Build, GitHub Actions). Detail-oriented and comfortable owning a queue of failing checks across multiple agents at once.
+
+Nice to Have: Experience with Gemini Enterprise / ADK agents specifically, or another enterprise agent platform. Familiarity with RAG evaluation (faithfulness, hallucination, context precision/recall). Prior audit or compliance-adjacent work (SOC 2, ISO 27001, or similar).
+
+What Success Looks Like: By month two: every live agent has an active Trustworthiness evaluation suite running on every commit, with clear pass/fail thresholds. By month four: audit-evidence packages are produced on a standing cadence without ad hoc requests, and dataset coverage gaps are tracked and closed as new agents onboard.
+
+About Us: At Zensar, we're ""experience-led everything."" We are committed to conceptualizing, designing, engineering, marketing, and managing digital solutions and experiences for over 130 leading enterprises. Part of the $4.8 billion RPG Group, we're a community of 10,000+ innovators across 30+ global locations."
+"Opkey","AI QA ENGINEER","Job Title: AI | QA Engineer
+Location: Bangalore, India (On-site)
+Department: AI & Automation
+
+About The Company: Opkey is the leading Cloud Application Lifecycle Management (CALM) platform for Oracle, Workday, Salesforce, Coupa, and more. It cuts the costs and risks that drag down implementations and ongoing change, helping you go live on time, get more from your cloud app investments, and reach AI readiness faster. Opkey's 20+ AI agents manage all five phases of the cloud application lifecycle—Define, Design, Configure, Test and Train. Powered by Argus, a domain-specific AI model trained on decades of expertise and terabytes of enterprise application data, Opkey automates configuration, testing, change impact analysis, and training across these applications—cutting manual effort by 80%, enabling 30% faster go-lives, and slashing downtime risk by 92%.
+
+About The Role: We are looking for a skilled AI QA Engineer to join our ERP automation team at Opkey. You will work closely with AI developers to test, validate, and ensure the quality of AI-powered agents built for enterprise ERP workflows.
+
+Key Responsibilities: Design, develop, and execute test strategies for AI agents used in ERP automation pipelines. Validate the behavior, accuracy, and reliability of AI agent outputs across various ERP scenarios. Collaborate with AI developers to understand agent architecture and identify edge cases. Build and maintain automated test frameworks tailored for LLM-based and agentic systems. Perform functional, regression, integration, and performance testing on AI-driven workflows. Monitor AI agent performance post-deployment and flag anomalies or drift in behavior. Write detailed test plans, bug reports, and QA documentation specific to AI systems. Conduct prompt testing and evaluate AI responses for correctness, consistency, and safety. Build and maintain internal QA dashboards and reporting tools for real-time test visibility. Participate in Agile/Scrum ceremonies including sprint planning, standups, retrospectives, and backlog grooming as the QA representative. Conduct thorough Root Cause Analysis (RCA) on defects, test failures, and AI agent misbehaviors and present findings to the team. Follow and contribute to SDLC and STLC processes ensuring quality gates are met at every stage of development.
+
+Required Skills & Experience: 2–4 years of hands-on experience as a QA Engineer in software or automation products. Strong understanding of SDLC and STLC methodologies. Hands-on experience working in Agile/Scrum teams with familiarity in tools like Jira or Azure DevOps. Proficiency in Python for writing test scripts, automation utilities, and data validators. Experience building lightweight internal tools or test dashboards using Streamlit. Solid understanding of AI agents, LLMs, RAG pipelines, and agentic frameworks (LangChain, AutoGen, CrewAI, etc.). Experience testing API-based systems, microservices, and complex backend workflows. Proficiency with test automation tools such as Selenium, Pytest, Postman, or similar. Proven ability to perform Root Cause Analysis on complex bugs and systemic failures with clear documentation. Familiarity with ERP platforms (SAP, Oracle, Salesforce, etc.) is a strong plus. Knowledge of prompt engineering and how to test AI model behavior systematically. Experience with CI/CD pipelines and integrating automated tests into DevOps workflows.
+
+AI Certifications (Required / Preferred): Certification in AI/ML fundamentals — Google, Microsoft (Azure AI), AWS, or IBM preferred. Certification in Generative AI or LLM-related technologies. Any recognized certification in AI Agent development or Agentic frameworks is a strong plus.
+
+Skills: llm, pytest, ai agents, selenium, postman, rag pipelines"
+"Bytebeam","QA Engineer (SDE 3)","About Bytebeam: Bytebeam builds the hardware and software stacks that power the next generation of connected vehicles. Our products cover device telemetry, remote diagnostics, OTA updates, alerts, fleet workflows, and the hardware that runs in vehicles at scale.
+
+Role Overview: We are hiring a senior QA engineer to own release confidence across Bytebeam's products and build agentic automations that help developers test, debug, validate, and ship faster. This is a hands-on automation, tooling, and quality-ownership role, not a test-case coordination role.
+
+What You'll Do:
+Own risk-based test strategy and release-readiness decisions across web, API, data, and connected-device workflows.
+Build and maintain automated coverage across browser, API, integration, performance, and failure scenarios.
+Build agentic automations and developer tooling that improve the engineering lifecycle, from local development to release validation.
+Design testability with engineers while features are being shaped, not after implementation.
+Create reliable environments, fixtures, mocks, data builders, and diagnostic tooling.
+Track escaped defects and flakiness to root causes and drive corrective changes.
+Mentor QA interns and improve how the wider engineering team tests, debugs, and reports quality.
+
+Must-Have Skills: 5+ years testing production software, with strong hands-on automation experience. Strong Python or TypeScript and experience with tools such as Playwright, pytest, k6, or equivalent. Experience testing APIs, distributed workflows, data pipelines, and asynchronous behavior. Ability to build practical developer-facing tools, automations, and diagnostics that reduce manual effort and improve feedback loops. Ability to make clear release judgments from evidence and communicate risk precisely.
+
+Good-to-Have: IoT, fleet, telematics, OTA, edge-device, or unreliable-network testing. Experience building CI quality gates and observability-driven test diagnostics. Experience building AI-assisted or agentic workflows for testing, debugging, triage, or developer productivity.
+
+What Success Looks Like: The team releases more frequently with fewer regressions, and developers have better tools and automations to validate changes, diagnose failures, and move faster through the development lifecycle."
+"Hewlett Packard Enterprise","QA Automation Engineer – GenAI, Storage & System Testing","This role has been designed as ""Onsite"" with an expectation that you will primarily work from an HPE partner/customer office.
+
+Who We Are: Hewlett Packard Enterprise is the global edge-to-cloud company advancing the way people live and work. We help companies connect, protect, analyze, and act on their data and applications wherever they live, from edge to cloud.
+
+Job Description
+What You'll Do: Design and develop scalable automation frameworks using Python or Perl. Build and enhance AI-driven QA solutions, including GenAI-based test generation, defect triage, and log analysis. Develop and execute system-level tests to validate performance, reliability, and scalability of storage and OS environments. Create tools for log parsing, data collection, and automated validation to support intelligent testing workflows. Analyze system architecture and define efficient test strategies across storage, OS, and networking layers. Integrate automation into CI/CD pipelines to enable continuous testing. Collaborate with development teams to identify, debug, and resolve defects early. Drive innovation through AI-assisted testing and automation improvements.
+
+What You Need to Bring: 4–8 years of experience in QA automation, system testing, or storage testing. Strong programming skills in Python or Perl. Solid understanding of testing principles, debugging, and automation design. Hands-on experience with Linux/Unix systems. Familiarity with automation frameworks such as pytest or unittest. Understanding of CI/CD tools like Jenkins or GitHub Actions. Exposure to storage concepts (SAN/NAS, RAID, file systems) and system-level testing. Basic knowledge of networking and distributed systems is a plus. Experience or interest in Generative AI, LLMs, or AI-driven testing approaches. Strong analytical thinking, problem-solving skills, and ability to work collaboratively.
+
+Additional Skills: Cloud Architectures, Cross Domain Knowledge, Design Thinking, Development Fundamentals, DevOps, Distributed Computing, Microservices Fluency, Full Stack Development, Security-First Mindset, Solutions Design, Testing & Automation, User Experience (UX).
+
+Job Level: TCP_03. #india #hybridcloud"
+"Get Well","Senior AI QA Engineer","Title: Senior AI QA Engineer
+Location: Bengaluru (Bangalore)
+
+Opportunity: As a Senior AI QA Engineer for our Precision Patient Care Pipeline, you will go beyond traditional functional testing. You will be responsible for building the framework that ensures our clinical insights are accurate, safe, and reliable. This role requires a unique blend of high-level software testing and data engineering to validate complex, non-deterministic medical outputs using a hybrid of automated grading methodologies.
+
+Key Responsibilities:
+Architect Multi-Layered Validation Frameworks: Design and implement structured testing strategies that combine deterministic checks, semantic similarity metrics, and model-based evaluations.
+Automated Model Grading: Develop systems to evaluate clinical pipeline outputs for faithfulness, safety, and hallucination detection using various automated scoring techniques (e.g., BERTScore, ROUGE, or custom heuristics).
+Vibe-Driven Development: Leverage agentic AI tools to rapidly prototype complex test harnesses, ""red-team"" clinical logic, and build internal validation utilities at high velocity.
+Data Pipeline Integrity: Execute integration and regression tests for data-heavy backend processes, ensuring medical data remains consistent from ingestion to insight generation.
+Collaborative Strategy: Work closely with Data Scientists and Product Managers to define ""Ground Truth"" datasets and clinical evaluation rubrics.
+Root Cause Analysis: Deep-dive into complex system failures to identify whether issues stem from code logic, data drift, or model behavior.
+
+Requirements: 6+ years of technical experience in Quality Assurance, with a strong focus on system architecture and backend data validation. Advanced Python Proficiency for building custom test scripts and working within AI/ML ecosystems. AI/ML Validation Experience with diverse metrics (Semantic Similarity, NLP metrics, custom scoring algorithms). Familiarity with tools like LangSmith, Arize Phoenix, or MLflow. Vibe Coding Mastery with AI-native development tools such as Cursor, Windsurf, Claude Code. Modern Automation Stack: PyTest, plus Cypress, Playwright, or Selenium. API & Data Testing: Postman/RestAssured and database validation (SQL/NoSQL). Strategic Thinking: SME experience on test process development for large-scale systems.
+
+Preferred: Clinical Domain Knowledge (FHIR, HL7, SNOMED CT). Healthcare Compliance: HIPAA regulations and ePHI/PHI handling. Statistical Foundation: sensitivity, specificity, and F1-scores in a clinical context.
+
+About GW RhythmX: GW RhythmX is revolutionizing healthcare through connected, AI-native intelligence that unites clinical insight, patient engagement, and system-wide care orchestration. Its solutions are deployed across more than 150 health systems, touching more than 85M patients including 8M U.S. military veterans. A SymphonyAI Group company, GW RhythmX leverages various firm assets, including $1B+ in R&D investment, longitudinal data related to 300 million patients, 4.4 billion total annual claims, and 1.8 million healthcare professionals at more than 3,000 facilities globally."
+"Equinix","AI Automation Engineer - Test Generation & Agent Systems (Sr Staff)","Who are we? Equinix is the world's digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.
+
+About The Role: This is one of the most technically novel roles in the team. You will build the intelligence layer of our QE platform: a pipeline that takes a Jira ticket or product specification and produces a first-draft Playwright test using Claude, and an autonomous agent that monitors the live test suite, detects flakiness, diagnoses root causes, and proposes or applies fixes. The quality of your agent layer will directly determine how fast the rest of the team can move.
+
+What You'll Own:
+Design and build the Claude-powered test generation pipeline: product spec or Jira ticket in, first-draft Playwright test out.
+Build the test maintenance agent: continuously monitors the suite, detects flaky or failing tests, diagnoses causes, and proposes or auto-applies fixes with human-in-the-loop review.
+Own the prompt engineering layer: maintain the prompt library, build an evaluation harness, and score generated test quality systematically.
+Define the acceptance workflow: which AI-generated tests require engineer review before merge, and which meet the bar for automatic acceptance.
+Instrument the agent layer: track cost per test generated, acceptance rate, time-to-fix for maintenance interventions, and overall flakiness reduction.
+Partner closely with automation engineers to understand product domain nuance and improve generation quality for complex business logic.
+Stay current with fast-moving LLM tooling and evaluate new approaches that could improve speed or quality.
+
+MUST HAVE: Production experience with the Anthropic Claude API or OpenAI API — specifically tool use, multi-step agent patterns, and structured output. 8+ years of strong TypeScript or Python. Ability to evaluate LLM output quality rigorously: you build evals, not just vibes checks. Experience designing agentic systems that handle failure gracefully: retries, fallbacks, and human escalation paths. Comfort with ambiguity and incomplete requirements.
+
+NICE TO HAVE: Playwright or comparable E2E test framework experience. Experience with test infrastructure: fixture factories, seed scripts, environment isolation. Prior work building agents with persistent memory, multi-tool orchestration, or complex retry logic.
+
+Equinix is committed to ensuring that our employment process is open to all individuals, including those with a disability."
+"Docent (now Get Well)","Senior AI QA Engineer","Title: Senior AI QA Engineer
+Location: Bengaluru (Bangalore)
+
+Opportunity: As a Senior AI QA Engineer for our Precision Patient Care Pipeline, you will go beyond traditional functional testing. You will be responsible for building the framework that ensures our clinical insights are accurate, safe, and reliable. This role requires a unique blend of high-level software testing and data engineering to validate complex, non-deterministic medical outputs using a hybrid of automated grading methodologies.
+
+Key Responsibilities: Architect Multi-Layered Validation Frameworks combining deterministic checks, semantic similarity metrics, and model-based evaluations. Automated Model Grading using BERTScore, ROUGE, or custom heuristics for faithfulness, safety, and hallucination detection. Vibe-Driven Development: leverage agentic AI tools to rapidly prototype complex test harnesses, ""red-team"" clinical logic, and build internal validation utilities. Data Pipeline Integrity: execute integration and regression tests for data-heavy backend processes. Collaborative Strategy with Data Scientists and Product Managers to define ""Ground Truth"" datasets and clinical evaluation rubrics. Root Cause Analysis for complex system failures.
+
+Requirements: 6+ years of technical experience in Quality Assurance, with a strong focus on system architecture and backend data validation. Advanced Python Proficiency. AI/ML Validation Experience (Semantic Similarity, NLP metrics, custom scoring algorithms; LangSmith, Arize Phoenix, MLflow). Vibe Coding Mastery with Cursor, Windsurf, Claude Code. Modern Automation Stack: PyTest, Cypress, Playwright, or Selenium. API & Data Testing: Postman/RestAssured, SQL/NoSQL. Strategic Thinking as SME on test process development.
+
+Preferred: Clinical Domain Knowledge (FHIR, HL7, SNOMED CT). Healthcare Compliance: HIPAA, ePHI/PHI. Statistical Foundation: sensitivity, specificity, F1-scores.
+
+About GW RhythmX: GW RhythmX is revolutionizing healthcare through connected, AI-native intelligence uniting clinical insight, patient engagement, and system-wide care orchestration. Deployed across 150+ health systems, touching 85M+ patients including 8M U.S. military veterans. A SymphonyAI Group company with $1B+ R&D investment, data on 300 million patients, 4.4 billion annual claims, and 1.8 million healthcare professionals across 3,000+ facilities globally."
+"Zeta Global","Staff QA Automation Engineer","Staff QA Automation Engineer
+Job Location: Bangalore
+
+About the role: Most teams trade speed for quality. We believe quality is what enables speed. We are building an AI-first engineering organization where teams ship fast, confidently, and continuously. This is a high-ownership position where you define how an AI-first team builds, validates, and ships production software.
+
+Key Responsibilities:
+Build Quality as a System: Turn quality into developer behavior, not a downstream gate. Design automated testing systems that act as guardrails. Define and enforce what ""production-ready"" means through systems. Eliminate ""hope-driven"" releases.
+Define What's Buildable: Partner with Product and Sales to validate ideas early. Assess feasibility, data requirements, trade-offs, and cost.
+Own the Data Reality: Map how data actually flows across systems and integrations. Identify gaps, inconsistencies, and reliability issues.
+Bring Domain Expertise: MarTech/AdTech (identity, activation, measurement); healthcare data constraints and compliance.
+Drive Delivery End-to-End: Own delivery for AI-first engineering teams. Break down work into clear, actionable steps.
+Redefine QA for AI Systems: Develop testing strategies for AI-generated, non-deterministic systems. Validate outputs and behavior, not just code. Build evaluation frameworks for AI reliability and accuracy.
+
+What You Need to Succeed: Strong systems thinking across quality, data, and delivery. Ability to move from data models → requirements → test strategy → delivery plan. Confidence pushing back on unclear or unviable ideas.
+
+Core Experience: Background in Quality Engineering, SDET, or technical delivery leadership. Hands-on experience with test automation and CI/CD pipelines. Strong SQL skills. Experience with AI-assisted development or ML/LLM-based systems.
+
+Nice to Have: MarTech/AdTech ecosystems experience. Familiarity with healthcare data, compliance. Exposure to building or testing AI-first or non-deterministic systems at scale.
+
+Company Summary: Zeta Global is a data-powered marketing technology company founded in 2007 by David A. Steinberg and John Sculley. Combines the industry's 3rd largest proprietary data set (2.4B+ identities) with AI. Publicly traded on NYSE: ZETA. Athena by Zeta™ is a superintelligent, conversational agent embedded in the Zeta Marketing Platform."
+"peopleHum","AI QA Specialist","About PeopleHum: peopleHum is a Human Capital Platform, built for the next decade, on a mission to transform ""The Future of Work"". Winner of the 2019 Global Codie award.
+
+Role Overview: PeopleHum is an AI-native Human capital global platform built on a microservices architecture with event-driven pipelines and deep LLM integrations on the Java stack. We are looking for a QA Specialist who can own quality end-to-end from writing automation frameworks and API test suites to performance benchmarking and production monitoring, including testing AI agentic systems. As AI agents make autonomous decisions (payroll calculations, employee workflows, HR automation), testing their correctness, safety, and edge-case behavior is critical.
+
+Key Responsibilities:
+Quality Ownership Mindset: prevent defects, not just find them; own quality culture; interest in AI engineering / Agentic build environments / vibe coding / QA as a service.
+Advocacy & Risk Communication: raise concerns about risks early; communicate quality issues clearly with data and impact.
+Collaboration & Partner, Not Gatekeeper: embedded in the development team, sprint planning, stand-ups, retrospectives.
+Critical Thinking & Analytical Skills: investigate issues to root cause; think in edge cases.
+Proactive Behaviour & Gap Identification: input during design phase; continuously learn new testing approaches.
+Documentation & Communication Discipline: clear, actionable bug reports; maintainable test documentation.
+Product Curiosity & User Empathy: understand workflows, personas, real-world usage; excited by testing AI agents making autonomous decisions (payroll, HR workflows, compliance).
+
+Must have skills: Selenium WebDriver, Playwright, TestNG/JUnit. REST Assured, Postman, API validation. Apache JMeter (response times, throughput, SLA validation). Java (plus Python, TypeScript/JavaScript). Understanding of LLMs, AI agents, non-deterministic outputs, guardrail testing, hallucination detection, AI API testing. Git, microservices, REST/Kafka communication, SQL basics.
+
+Good to have skills: Jenkins and GitLab CI/CD. Containerized/stable test environments. Kafka message testing. Cucumber/Gherkin or Robot Framework. Axe-core/WCAG validation and OWASP ZAP. Tools like Claude Code, GitHub Copilot, Cursor, or Cody. Code-first performance testing tools. Observability-driven testing."
+"smallest.ai","Automation QA Engineer","Location: Bangalore
+
+About Smallest.ai: smallest.ai is building next-generation AI infrastructure and voice technology to power intelligent products at scale. We work across speech, LLMs, and real-time AI systems, building tools developers and businesses rely on.
+
+We're looking for an Automation QA Engineer to build and own our backend automation test suite. You'll work closely with engineers to ensure our APIs, services, and end-to-end workflows are reliable, scalable, and production-ready.
+
+What You'll Do: Build and maintain a scalable end-to-end automation test suite for backend services. Automate API and integration testing across multiple services. Validate business logic, data flow, and end-to-end workflows. Identify edge cases, regressions, and failure scenarios. Integrate automated tests into CI/CD pipelines. Investigate test failures and work with engineers to resolve issues. Improve test coverage, automation frameworks, and QA processes.
+
+What We're Looking For: Strong understanding of software testing fundamentals, STLC, and SDLC. Experience with manual testing across UI and APIs. Ability to design clear test scenarios and test cases. Strong analytical thinking and attention to detail. Ability to think through real user behavior and product flows. Good communication and collaboration skills.
+
+Why Join smallest.ai: Build the automation foundation for cutting-edge AI products. Work on large-scale backend systems and real-time AI infrastructure. Be part of a high-ownership engineering culture. Help teams ship faster with confidence through reliable automation."
+"Deccan AI","Software Test Engineer","About Deccan AI: Deccan AI builds enterprise AI systems that put accuracy at the center of intelligence. We work at the intersection of applied ML, data infrastructure, and product, helping organizations move from pilots to production grade AI. We recently raised $25M in Series A funding and are entering a rapid growth phase. Our India office is based in Hyderabad. With 1M+ global experts, advanced automation, and vertically integrated platforms, we deliver the gold-standard data that world-class AI models rely on.
+
+Role Summary: Build automated testing frameworks and quality processes that catch issues before they reach production, for the focus area below.
+
+Core Skills: Test automation (Selenium/Playwright/etc.), CI/CD integration, scripting, and QA strategy.
+
+Engineer, SDET: Build automated testing frameworks and quality processes that catch issues before they reach production.
+
+Senior Engineer, SDET: Build automated testing frameworks and quality processes that catch issues before they reach production.
+
+Sr Engineer, Software - Automation Testing: Focus area: Automation Testing. Build automated testing frameworks and quality processes that catch issues before they reach production, specifically for Automation Testing.
+
+Note: This is a future-ready pipeline role — it is not open today. Apply only if you'd like Deccan AI to reach out when this position opens, so your details are on hand to close it in a shorter turnaround time (TAT).
+
+About Deccan AI (company): Build Super Accurate AI. Based in San Francisco, helps frontier AI labs and enterprises like Google, Snowflake improve model performance through research-grade evals, benchmarks, and novel datasets at scale. Delivers mid- and post-training solutions across Agentic, Coding, Functional Streams, Multimodal, Model Alignment, and Robotics domains, leveraging 1.2M+ experts and platforms like STARK, Helix, and EnterpriseOS. Raised $25M+ from A91 Partners, Susquehanna, Prosus Ventures, and other angels."
+"Ascendion","QA Engineer","Job Description – QA Automation Engineer
+
+We are looking for a QA Automation Engineer with strong experience in Python, Selenium, API Testing, PyTest, Jenkins CI/CD, and AI-powered testing tools. The candidate will be responsible for developing and maintaining automation frameworks, integrating test execution into CI/CD pipelines, and ensuring high-quality software delivery.
+
+Key Responsibilities: Develop and maintain test automation scripts using Python and Selenium. Perform API testing using Postman, Newman, and REST API concepts. Build and execute automated test suites using PyTest. Integrate automation execution within Jenkins CI/CD pipelines. Leverage AI tools (GitHub Copilot, Claude, OpenAI) to improve productivity and testing efficiency. Collaborate with cross-functional teams and communicate testing progress effectively.
+
+Required Skills: Python (Intermediate to Expert level coding). Selenium: XPath, Fluent Wait, Soft/Hard Assert, Relative Locators, Headless Execution. API Testing: HTTP Methods, OPTIONS Method, Postman, Newman CLI. Jenkins: Pipeline creation, configuration, and administration. PyTest: Fixtures, Markers, Parametrization, CLI Execution. AI Concepts: Prompt Engineering, Agentic AI, Tokenization, RAG, Orchestration. Strong verbal and written communication skills.
+
+Experience: 6 to 10 years of experience in QA Automation and Test Engineering."
+"NetApp","Software Development Engineer in Test (API, UI & Agentic Systems)","Own Every Moment at NetApp: At NetApp, your ideas power innovation. We lead in intelligent data infrastructure—delivering unified storage, integrated data services, and solutions that help organizations unlock the full potential of their data, from AI to multicloud.
+
+Job Summary: We are looking for a highly motivated Software Engineer 3 to help build the next generation of intelligent quality engineering platforms. In this role, you will design and develop scalable automation frameworks that validate modern distributed applications, APIs, web experiences, and AI-powered agentic workflows. You will work closely with engineering, product management, and quality teams to define automation strategies, improve release confidence, and accelerate product delivery through innovative testing solutions.
+
+Job Requirements: 4+ years of software development or test automation experience. Strong programming skills (Python, JavaScript/TypeScript). Hands-on experience building automation frameworks from the ground up. Experience testing REST APIs using Pytest, Playwright API Testing. Experience automating web applications using Playwright, Cypress. Strong understanding of SDLC and testing methodologies. Experience with Git, CI/CD pipelines, and cloud-native application testing. Familiarity with microservices architectures and distributed systems.
+
+Preferred Qualifications: Experience testing AI/GenAI applications and agentic systems. Familiarity with OpenAI, Azure OpenAI, Anthropic, or similar LLM platforms; LangChain, LangGraph, CrewAI, AutoGen, Semantic Kernel; MCP-based integrations; vector databases and RAG architectures. Experience building evaluation frameworks for agent correctness, hallucination detection, workflow reliability, prompt and model regression testing. Experience with Kubernetes, Docker, and cloud platforms (AWS, Azure, or GCP). Knowledge of performance, security, and resilience testing. Exposure to observability tools and telemetry-driven quality engineering.
+
+What You'll Do: Design and develop reusable automation frameworks for REST/GraphQL APIs, modern web applications and UIs, AI-powered applications and agentic workflows. Build scalable test infrastructure supporting functional, integration, regression, performance, and end-to-end testing. Create automated validation mechanisms for LLM-based systems, AI agents, multi-agent workflows, and RAG applications. Integrate automation into CI/CD pipelines. Establish shift-left testing practices. Define quality metrics, coverage goals, and automation standards. Contribute to adoption of AI-assisted testing techniques and intelligent test generation.
+
+Education: Bachelor's or Master's degree in Computer Science, Engineering, or related discipline; 4+ years of related experience.
+
+Nice to Have: Experience in storage, cloud infrastructure, data management, or enterprise platforms. Exposure to AI-driven test generation and autonomous testing solutions. Contributions to open-source testing frameworks or developer tooling."
+"Lyzr AI","QA Engineer","Lyzr, in a minute: Lyzr is an enterprise software company that helps large organisations put AI agents to work in their everyday operations. Today, 500+ enterprises build on Lyzr, more than 1,000 agents run live in production, and 85% of Lyzr projects reach production against an industry average of roughly 30%. Customers include Accenture, WTW, Hitachi, and Verifone; recently raised $100M at a $500M valuation.
+
+The role: Our Applied AI pods build agent applications for enterprise customers, and each pod needs a dedicated quality owner. Testing AI agents is a discipline of its own: these systems are non-deterministic by design, and evaluating them requires new strategies beyond conventional QA. You will own quality end-to-end for your pod — test strategy, automation, API-level testing, and the evaluation of LLM-based systems.
+
+Team: Applied AI. Experience: 2–5 years. Work mode: Hybrid.
+
+What Will Make You Win This Role: You test AI applications from the builder's side (you have built AI-based applications yourself). TypeScript or Python proficiency. API testing expertise with tools such as Postman. AI/LLM testing experience — prompts, agents, RAG pipelines, evaluations. Ability to work well across parallel projects with a solutioning mindset.
+
+Cherry on top: Playwright or Selenium experience.
+
+Life at Lyzr: Zomato meal allowance, extensive PTO policy, company-paid subscriptions to leading AI tools. Hybrid structure. Autonomy and ownership — hire people who think like founders.
+
+About Lyzr AI: The history of enterprise AI is full of successful pilots that never make it to production because of compliance, data privacy, and governance requirements. At Lyzr AI, we build the most trusted, enterprise-grade infrastructure for AI agents — an Enterprise Control Plane connecting agents from any framework into unified infrastructure for governance and visibility, with simulation, observability, and strict governance (SOC 2 practices, RBAC, PII masking, hallucination guards)."
+"Altimate AI","Senior QA Engineer","Why Join Us: Altimate AI is at the forefront of the AI-driven data revolution, solving one of the biggest pain points in modern enterprise analytics—an overwhelming volume of data work and a shortage of skilled data professionals. Our mission: Automate and accelerate data operations. Our flagship product, DataPilot, and pioneering DataMates technology lead the charge in ""agentic AI"" for data teams (e.g., a VSCode extension used across 50+ countries). Fortune 1000 companies are paying customers.
+
+Your Impact: Help expand and scale the capabilities of the DataPilot platform by envisioning, scoping, and launching next-gen functionality.
+
+What you'll do: Own end-to-end quality across front-end and Python backend (FastAPI, PostgreSQL, ClickHouse), serving multiple enterprise tenants. Create and manage test plans, test cases, and regression coverage for new features and releases. Review and steer AI-generated test suites — separating tests that catch real bugs from tests that just pass. Triage production issues and drive them to root cause. Develop and maintain QA tools and frameworks that support automated testing pipeline. Run exploratory, usability, and manual testing where automation isn't the right tool. Collaborate with engineering and product to define test strategy.
+
+Must-haves: Strong SQL — PostgreSQL plus an analytical database (ClickHouse or similar). 3 to 5 years of experience. Python with pytest — writing, reviewing, debugging automated tests. API and backend testing depth — auth, multi-tenancy, error paths. End-to-end testing experience across front-end and back-end. Test plan, test case, and regression coverage ownership. AI-assisted quality engineering — using GenAI tools (Claude, ChatGPT, Copilot, Cursor) for test design and generation, and critically reviewing AI-generated tests. CI/CD integration experience — GitHub Actions or similar. Ability to read code and stack traces and trace a failure to its root cause. Clear, evidence-based bug reports and strong communication.
+
+Good to have: Data pipeline and data testing understanding (dbt, warehouse concepts). Snowflake or Databricks domain exposure. Experience evaluating LLM output (evals, golden datasets, quality rubrics). Load testing (Locust/k6) or security testing exposure. Front-end automation frameworks (Playwright, Cypress)."
+"BCE Global Tech - A Bell Canada Company","AI Testing","BCE Global Tech's Global Quality Engineering (GQE) function is building one of Canada's most ambitious AI quality programs — certifying every AI and agentic system deployed across Bell Canada before it reaches production. As a QA AI Specialist, you sit at the intersection of artificial intelligence, software engineering, and quality assurance.
+
+You will do two things simultaneously: bring AI into GQE's existing testing practice — embedding AI-powered capabilities into the test automation tooling, pipelines, and frameworks that 250 QA engineers already use every day; and build and operate the evaluation frameworks that test the AI systems being created by other Bell engineering teams — agents, orchestration pipelines, RAG applications, Salesforce AgentForce workflows, and ServiceNow Now Assist integrations.
+
+Key Responsibilities:
+AI-Enhanced QA Tooling: Integrate AI-driven test generation into Selenium, Playwright, and Postman frameworks. Use predictive models to prioritize tests based on code changes and defect history. Enable self-healing automation for UI/API changes. Automate defect triage and root-cause analysis using failure clustering. Support natural-language test authoring (English/French). Continuously pilot emerging AI testing tools via a technology radar.
+AI Evaluation & Quality Pipelines: Implement LLM-as-Judge pipelines on Vertex AI (Gemini). Generate large, diverse, and adversarial test corpora from seed intents. Evaluate RAG systems using metrics like faithfulness, relevance, and recall (RAGAS). Validate multi-step agent workflows, tool usage, and escalation behavior. Embed AI evaluations into CI/CD as mandatory release gates.
+AI Safety & Adversarial Testing: Execute prompt injection and poisoned-context attacks on RAG systems. Run automated jailbreak and constraint-bypass probes (e.g., Garak). Test hallucination, numerical accuracy, domain knowledge. Assess toxicity, bias, and fairness across English and French interactions. Stress-test agentic systems for runaway actions and scope violations.
+Continuous Quality Evolution: Monitor production AI outputs for quality drift and trigger re-certification. Track model/version changes and generate quality delta reports.
+AI Quality Certification Operations: Own Tier 2 & 3 certification testing from corpus design to red-teaming. Calibrate LLM-as-Judge rubrics using human-labeled golden datasets. Produce clear AI Quality Certificates with scores, risks, and conditions.
+
+Required: 5+ years of software quality engineering experience, with at least 2 years working directly with AI/ML systems, LLMs, or AI-powered applications. Hands-on experience building or evaluating LLM-based applications — prompt engineering, RAG pipelines, or agentic workflows. Proficiency in Python. Experience with modern test automation frameworks (Playwright, Selenium, Pytest, RestAssured, Postman/Newman) and CI/CD platforms. Working knowledge of at least one major AI/ML platform — Google Vertex AI, Azure OpenAI, or AWS Bedrock. Strong conceptual understanding of how LLMs work. Demonstrated ability to design test strategies for non-deterministic systems.
+
+What We Offer: Competitive salaries and comprehensive health benefits. Flexible work hours and remote work options. Professional development and training opportunities."
+"West Pharmaceutical Services","Senior AI QA Automation Engineer, D&T","At West, we're a dedicated team connected by a purpose to improve patient lives that has been at the center of our Company for more than a century.
+
+Job Summary: We are looking for a Senior AI QA Automation Engineer to build and scale AI-enabled testing capabilities across our digital platforms. This role combines strong automation engineering with hands-on use of generative AI to improve test coverage, speed, and quality. You will enhance existing automation frameworks with AI-driven capabilities such as test generation, failure analysis, and test optimization, and integrate them into CI/CD pipelines.
+
+Essential Duties And Responsibilities:
+AI-Enabled Test Automation: Design, build, and maintain scalable automation frameworks for web, API, and mobile applications. Enhance existing automation (Selenium, Playwright) with AI-driven capabilities such as test case generation, test data creation, failure analysis and debugging support.
+Practical AI Integration in QA: Apply GenAI (Azure OpenAI, OpenAI APIs) for automated test creation and maintenance, result summarization and defect insights, test coverage and risk analysis. Build Python or JavaScript utilities to integrate AI services into QA workflows.
+CI/CD & Quality Engineering: Integrate automated tests into CI/CD pipelines (Azure DevOps) with clear quality gates. Collaborate with DevOps and engineering teams to enable continuous testing.
+Quality Strategy & Best Practices: Contribute to test strategy, test planning, and automation roadmap.
+Data-Driven Quality Improvements: Identify flaky tests and root causes; improve defect detection and test prioritization; support metrics and dashboards.
+Continuous Improvement & Innovation: Evaluate emerging tools and approaches in AI-driven QA and automation.
+
+Work Experience: 5–8 years of experience in QA automation / SDET roles. Proven experience designing and maintaining automation frameworks for web, API, and at least one of mobile or desktop applications. Strong programming skills in Python, Java, or JavaScript. Solid understanding of CI/CD pipelines (Azure DevOps preferred). Hands-on experience or demonstrated interest in applying AI/GenAI to testing. Experience with modern testing tools (Playwright, Selenium, REST Assured, Appium, BrowserStack).
+
+Preferred: Self-healing automation, LLM-based test generation and optimization, AI-assisted defect triaging or flaky test detection. Modern test automation architectures (modular, API-first, scalable). Observability and telemetry-driven testing. Synthetic data generation and AI-assisted data creation.
+
+Shift: 12pm – 9pm India time."
+"PwC Acceleration Center India","Gen AI-QA Automation Tester-Senior Associate","The Opportunity: Join our Acceleration Center India and help shape the future of business for our diverse client portfolio across geographies and jurisdictions. As a Gen AI-QA Automation Tester-Senior Associate, you will play a pivotal role in transforming raw data into actionable insights within our Data and Analytics Engineering practice.
+
+As a Senior Associate, you will build meaningful client connections and learn how to manage and inspire others, navigating increasingly complex situations while embracing ambiguity.
+
+Responsibilities: Developing and implementing automated testing frameworks for data-driven solutions. Leveraging advanced analytics and statistical techniques to extract insights from complex datasets. Collaborating with cross-functional teams to design and optimize data pipelines and workflows. Utilizing programming languages such as C++ and R for data modeling and predictive analysis. Applying machine learning algorithms and neural networks to enhance data science projects. Conducting exploratory and descriptive analysis. Building and maintaining data visualizations. Troubleshooting data science workflows to improve data quality and accuracy. Supporting client engagements by providing technical guidance and innovative solutions.
+
+What You Must Have: At least a Bachelor's degree. At least 2 years of experience. Oral and written proficiency in English required.
+
+What Sets You Apart: Extensive hands-on expertise in Playwright automation with Python, including scalable automation frameworks using Pytest, Page Object Model (POM), fixtures, parameterization, and data-driven testing techniques. Proven experience in REST API automation leveraging Python Requests, Pytest, Postman. Strong proficiency in SQL for backend testing, covering database validation, complex joins, stored procedures, data reconciliation. Skilled in automating functional, regression, integration, smoke, and end-to-end testing aligned with Agile principles. Understanding of test planning, test case design, defect lifecycle management, debugging, root cause analysis. Experienced in Git-based version control, code reviews, detailed test reports. Hands-on experience testing LLM/Generative AI and retrieval-augmented generation (RAG) applications — prompt validation, response accuracy, hallucination detection, citation verification, output consistency. Proficient in leveraging AI-powered development tools such as Claude, Cursor, ChatGPT, and GitHub Copilot to accelerate automation scripting, debugging, SQL generation, API test creation, documentation."
+"CGI","Senior QA Automation Engineer (Playwright + Cursor AI)","Position: Senior QA Automation Engineer
+Experience: 5 – 8 Years
+Category: QA Automation Engineering
+Shift: US Eastern Time (ET) – 6:30 PM to 3:30 AM IST (subject to Daylight Saving Time adjustments)
+Main location: India, Bangalore
+Employment Type: Full Time
+
+Position Description: We are looking for an experienced Senior QA Automation Engineer with expertise in Playwright and Cursor AI to build and maintain modern automation solutions supporting enterprise digital transformation initiatives. The candidate will be responsible for developing scalable automation frameworks, implementing AI assisted test automation, and ensuring high quality software delivery through continuous testing practices.
+
+Key Responsibilities: Design, develop, and maintain automation frameworks using Playwright with TypeScript/JavaScript. Develop automated Functional, Regression, Smoke, Sanity, and End to End test suites. Utilize Cursor AI to accelerate script development, code generation, debugging, and automation maintenance. Develop reusable automation components, utilities, and libraries. Automate REST API validation using Playwright API capabilities. Integrate automation suites with CI/CD pipelines (Azure DevOps, GitHub Actions, Jenkins). Analyze automation execution results and perform root cause analysis for failures. Participate in Sprint Planning, Backlog Grooming, and Agile ceremonies. Collaborate with Developers, Business Analysts, and Product Owners. Perform code reviews and promote automation best practices.
+
+Mandatory Skills: 5–8 years of experience in Software Testing and Automation. Minimum 3 years of hands on experience with Playwright. Strong programming skills in TypeScript and JavaScript. Experience using Cursor AI or AI assisted development tools (GitHub Copilot, Claude Code, Windsurf). Experience with REST API automation and validation. Experience integrating automation with CI/CD pipelines. Hands on experience with Git, Azure DevOps, or GitHub. Strong understanding of Agile/Scrum methodologies.
+
+Preferred Experience: Enterprise Web Applications; Retail / E Commerce Platforms; Microservices Architecture; API Automation; Cross browser Testing; Cloud based Applications; Continuous Testing. Exposure to Docker, Kubernetes, SQL/Database Validation, Performance Testing, Accessibility Testing, Azure Cloud.
+
+Key Competencies: Strong automation engineering expertise. AI assisted software development proficiency. High ownership and accountability. Ability to mentor junior automation engineers."
+"InCred Financial Services","Quality Assurance Engineer","Job Title: QA Engineer
+Experience Required: 4-6 years
+Location: Bengaluru
+
+About the Role: We are seeking a motivated QA Engineer with 4-6 years of experience to join our team. You will work in an agile environment, contributing to test automation, development collaboration, and quality across mobile, web, and API applications. A key part of this role involves leveraging Claude (Anthropic) to drive AI-assisted and agentic testing practices.
+
+Key Responsibilities:
+Core QA: Develop and execute test scenarios, conduct thorough mobile, web and API testing, generate test reports, and collaborate with product and engineering teams to achieve zero defects in production.
+Automation: Build and maintain automated regression suites using Selenium, TestNG, Postman, and Appium. Integrate tests into CI/CD pipelines and contribute to parallel automation alongside development teams.
+Agentic QA & AI Testing: Use Claude to autonomously generate test cases, auto-create scenarios from acceptance criteria, build self-healing test scripts, and drive visual regression and defect triage workflows. Contribute to the team's AI testing roadmap.
+
+Key Qualifications:
+Core Skills: 4-6 years of experience in software testing (manual + automation). Hands-on with Selenium, TestNG, Postman API Automation, and Appium (API automation is a must-have). Proficiency in testing mobile, web, and API applications. Strong understanding of agile methodologies.
+AI & Agentic QA: Hands-on experience using Claude for test generation, edge case identification, and QA documentation. Ability to build custom self-healing test scripts using Claude API — detecting broken selectors and regenerating locators automatically. Ability to prompt-engineer effectively to extract test cases and risk areas from requirements. Experience integrating Claude into test pipelines for defect classification, log analysis, and test reporting.
+
+Tools & Technologies: Git, CI/CD (Jenkins / GitHub Actions), Linear / Jira, Java or Python for automation scripting. Postman, RestAssured for API testing. Basic awareness of performance testing concepts.
+
+What We're Looking For: A proactive individual eager to learn and contribute to AI-first testing practices. A team player dedicated to delivering high-quality software with a zero-defect mindset. Someone passionate about automation, agentic QA, and continuous improvement."
+"Meraki Labs","AI Evaluation Engineer","About Us: Meraki Labs (founded by Mukesh Bansal & Peeyush Ranjan) builds and rapidly scales AI-first, ""moonshot"" startups. We're looking for a high-velocity, production-grade engineer to build 0-to-1 products alongside founders.
+
+About the Role: Proofline is live in production with institutional pilots underway. Building with AI is easy to prototype, but proving reliability in production is a major challenge. In AI-native codebases, verification is the key bottleneck for scaling capabilities. As an AI Evaluation Engineer, you will take ownership of the evaluation scaffolding and quality layer, including eval harnesses for AI-facing features, test infrastructure, and release gates. You'll play a critical role in monitoring how our product behaves across AI assistants (e.g., Claude, ChatGPT), accounting for differences by host and continual changes.
+
+Responsibilities: Build and maintain evaluation harnesses for AI-facing features to measure and tune system quality (capture quality, retrieval quality, guidance quality). Own end-to-end and API test infrastructure (Playwright-class), supporting a continuous, daily-release cycle. Design and execute host-behavior probes using scripted user sessions across diverse AI assistants. Gate production releases through thorough user acceptance testing (UAT), regression analysis, and quality reporting.
+
+Requirements: Experience - 5+ years. Background in SDET/QA automation or ML evaluation, with proven ownership of test or evaluation infrastructure (not just executing tests). Strong programming skills in Python or TypeScript, with API-level testing and tools like Playwright or Cypress. Familiarity with LLM applications or a demonstrated interest in evaluating non-deterministic systems. Highly autonomous and able to define your own workflows.
+
+How We Work: Small team, high trust, written decisions. Designs get adversarial review before code; PRs get automated review driven to zero open findings; features aren't done until verified on a live system. AI agents do a large share of the implementation—your leverage is judgment.
+
+Note: This is onsite Bangalore only (not remote/hybrid)."
+"Teradata","Senior AI Engineer – Test & Quality Enablement","Our Company: At Teradata, we believe that people thrive when empowered with better information. Teradata Autonomous Knowledge Platform activates enterprise intelligence by unifying data, knowledge and business context to achieve tangible outcomes.
+
+What You'll Do: We are seeking a highly experienced Senior AI Engineer to lead the design and development of AI agents, skills, and internal tools that materially accelerate test development, automation, execution, and analysis. This role sits at the intersection of quality engineering, internal tooling, and applied AI.
+
+Key Responsibilities:
+AI Agents & Skills for Test and Quality Engineering: Design and deliver agentic solutions that help engineers and SDETs generate, refine, and maintain test cases and test assets; automate repetitive testing workflows; summarize failures and recommend likely causes using logs, traces, and run artifacts; improve feedback loops through intelligent prioritization.
+AI-Powered Test Automation Frameworks & Pipelines: Architect and implement AI-powered test automation frameworks and tooling that are scalable and resilient. Develop self-healing/adaptive automation approaches. Integrate intelligent testing into CI/CD pipelines.
+Quality Signals, Analytics & Continuous Improvement: Analyze test run data and quality signals to identify patterns, anomalies, and improvement opportunities. Build automated workflows for complex validation scenarios.
+Technical Leadership & Enablement: Provide technical direction, code reviews, and mentorship. Evaluate and integrate third-party AI testing tools and platforms.
+
+What Makes You a Qualified Candidate: Bachelor's/Master's in Computer Science or equivalent. 5+ years experience in software engineering and/or test automation. Strong proficiency in Python and Linux/Unix environments. Demonstrated applied experience using AI/ML and/or generative AI to improve engineering workflows. Proven track record integrating automation into CI/CD pipelines.
+
+What You'll Bring: Hands-on experience building AI agents (planning/tool use, retrieval, evaluation) for internal engineering. Experience with Docker and modern test execution environments; Kubernetes is a plus. Experience with test intelligence use cases such as defect prediction, test selection optimization, or coverage insights. Experience establishing team practices around AI solution quality, safety, and operational readiness."
