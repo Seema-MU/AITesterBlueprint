@@ -1,0 +1,16 @@
+# Design system: "Review desk" — a light, document-led QA workspace.
+# Deliberately not the dark-terminal reflex for developer tooling.
+
+[theme]
+base = "light"
+primaryColor = "#8A2E56"          # berry accent — distinct from the pass/warn/fail trio
+backgroundColor = "#FBFAF8"       # warm paper, faintly tinted
+secondaryBackgroundColor = "#F4F2EE"
+textColor = "#1B1A18"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

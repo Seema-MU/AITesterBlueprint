@@ -1,0 +1,26 @@
+{
+  "_comment": "Bundled SAMPLE ticket for offline demonstration. This is NOT a real Jira issue — it never mixes with fetched tickets and is always marked source=sample_fixture. Used to walk the gap-analysis -> plan -> gate -> cases flow without Jira credentials.",
+  "issue_key": "SAMPLE-101",
+  "self": "https://example.atlassian.net/rest/api/3/issue/10101",
+  "fetched_at": "",
+  "source": "sample_fixture",
+  "source_hash": "sha256:sample-fixture-not-a-real-ticket",
+  "summary": "Login page to VMO.com website",
+  "issue_type": "Story",
+  "status": "To Do",
+  "priority": "High",
+  "components": ["Authentication"],
+  "labels": ["regression"],
+  "fix_versions": ["R1.2"],
+  "sprint": "",
+  "description_adf": {},
+  "description_text": "As a user I want to log in to the VWO dashboard at app.vwo.com so that I can access my experiments.\n\nSupport email and password login plus Google SSO. Show a clear error message on invalid credentials. Remember me should persist the session across browser restarts for up to 30 days.\n\nSupport SSO for enterprise accounts and Passkey sign-in. The page must follow WCAG 2.1 AA and enforce HTTPS. Login success and failure events must be sent to analytics.",
+  "acceptance_criteria": "",
+  "ac_source": "none_found",
+  "attachments": [
+    {"filename": "login-page-mockup.png", "content_url": "https://example.atlassian.net/attachment/1"}
+  ],
+  "links": [
+    {"relation": "blocks", "key": "SAMPLE-102"}
+  ]
+}

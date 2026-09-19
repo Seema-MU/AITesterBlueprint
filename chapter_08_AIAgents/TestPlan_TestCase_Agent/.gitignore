@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+
+# Secrets — never commit credentials
+.env
+config.json
+
+# Intermediate file operations (BLAST Layer 3)
+.tmp/
+
+# Generated run output — regenerable, and it accumulates on every run.
+# The app creates this directory on demand, so a fresh clone works without it.
+TestPlans/
+
+# Python caches
+__pycache__/
+*.pyc
