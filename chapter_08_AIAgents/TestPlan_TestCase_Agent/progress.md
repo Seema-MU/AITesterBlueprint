@@ -664,15 +664,55 @@ verified with `.tmp/verify_fresh.py`: server started **20:59:03**, newest source
 
 ---
 
-## Block 22 · T+250 — _next_
+## Block 22 · T+260 — Committed and pushed to GitHub
+
+Seema: *"ok for now i am totally good, lets commit and push this code to git."*
+
+**Commit `79c2ffd`** — "Add the Test Plan and Test Case agent (chapter 8)", 32 files, 6 095 insertions,
+pushed to `origin/master` (`869cb40..79c2ffd`). Remote head verified with `git ls-remote`.
+
+### 22.1 Pre-push gate
+
+| Check | Result |
+| ----- | ------ |
+| `git add -n` inventory | 79 entries → **32 after excluding generated output** |
+| `.env`, `config.json`, `.venv/`, `.tmp/` ignored | ✅ confirmed with `git check-ignore -v` |
+| Credential scan of the **committed tree** | ✅ no `ATATT3…`, no `gsk_…`, no `JIRA_TOKEN=` value |
+| `.env.example` (committed, since the root `.gitignore` un-ignores it) | ✅ placeholders only — that `!.env.example` rule means it had to be checked explicitly |
+| Syntax check | ✅ `compileall` exit 0 |
+| Commit trailer | ✅ `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` |
+
+**`TestPlans/` is now gitignored.** 47 of the 79 candidate files were generated run output, 19 of them
+named after my own test scripts. Generated output is regenerable, accumulates three files per run, and
+the app creates the directory on demand, so a fresh clone is unaffected. Nothing was deleted from disk.
+
+### 22.2 E-20 — I leaked real identifiers into the public docs
+
+**What happened.** The pre-push scan found my own `findings.md` and `progress.md` containing the real
+Atlassian **site hostnames** and the **account display name**, recorded verbatim from live verification
+output, and about to be published to a public repository.
+
+**Root cause.** I-8 ("PII never appears in output") was written for *generated artefacts*. I never
+applied it to my own documentation — but a verification log **is** output, and writing the evidence down
+verbatim is precisely how the leak happened.
+
+**Fix.** Redacted all six occurrences across the two files. Because the commit had **not** been pushed,
+it was amended rather than followed up, so the identifiers never entered history and cannot be recovered
+from the remote. Rescanned the amended commit: 0 hits for both hostnames, the display name, and both
+credential patterns.
+
+**Lesson recorded:** the redaction check belongs in the pre-commit routine next to the credential scan,
+and I-8 applies to every file I write, not only to what the agent generates.
+
+---
+
+## Block 23 · T+270 — _next_
 
 **Planned**
-- Re-run KAN-1 in the browser; the rail should read build `5656a668` and the header should carry the
-  Coverage note.
-- **Deferred by Seema:** guaranteed scenario coverage across P0–P3 — recorded as **D-8** in
-  `task_plan.md`, with the open design questions (taxonomy, enforcement model, weights, surfacing,
-  interaction with `max_cases`). Current state: coverage is reported, not enforced; the contract has no
-  P3 value; `fallback_cases` selects P0/P1 only.
+- Re-run KAN-1 in the browser; the rail should read build `5656a668`.
+- **Deferred by Seema:** guaranteed scenario coverage across P0–P3 — see **D-8** in `task_plan.md`.
+- When a real company Jira is wired up: revisit D-8, plus the open items S-7, S-8 and D-3, and
+  re-verify the LLM path against the production ticket shape.
 - Still unverified: the visual design (no `agent-browser` on this machine).
 
 **Error:** —
@@ -704,6 +744,7 @@ verified with `.tmp/verify_fresh.py`: server started **20:59:03**, newest source
 | E-17 | 19 | A bad trace column marked the whole file invalid | Contract and grounding failures shared one verdict | Severity split; UI shows both | ✅ fixed |
 | E-18 | 19 | UI test asserted a pill label I had renamed | Stale test | Test updated | ✅ test-only |
 | E-19 | 20 | **Stale server** — page code current, imported module old → `build_cases() takes from 3 to 4 positional arguments but 5 were given` | Streamlit hot-reloads `app.py` but **not** imported modules; and a restart that never bound the port went unnoticed because `/health` was answered by the stale process | Fresh restart; `build <hash>` stamp from live signatures; restart rule documented; `verify_fresh.py` compares process start vs source mtime | ✅ fixed |
+| E-20 | 22 | **Real Jira site hostnames and account display name written into `findings.md` / `progress.md`**, then staged for a public repo | I-8 was written for generated artefacts; I did not apply it to my own documentation. A verification log is still output | Redacted all 6 occurrences; amended the **unpushed** commit so the identifiers never entered history; rescanned → 0 hits | ✅ fixed |
 
 ## Running Decision Register
 
